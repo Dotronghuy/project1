@@ -1,0 +1,13 @@
+.default{
+    position: relative;
+}
+.pt-full{
+    padding-top: 100%;
+
+}
+.w-full{
+    width: 100%;
+}
+.h-full{
+    height: 100%;
+}
