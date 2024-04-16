@@ -24,3 +24,7 @@ body{
 .mb-4{
     margin-bottom: 4px;
 }
+.flex-center{
+    display: flex;
+    align-items: center;
+}

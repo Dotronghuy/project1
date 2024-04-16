@@ -1,0 +1,257 @@
+.wrrapper-sign_in-sign_up{
+    background-color: #fff;
+    min-height: 100vh;
+    min-width: 1200px;
+}
+.wrrapper-sign_in-sign_up--header{
+    height: 84px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, .06);
+  
+}
+.wrrapper-sign_in-sign_up--header,
+.desc-header-sign_up-in,
+.content-header,
+.header-left,
+.wrrapper-background{
+    display: flex;
+    align-items: center;
+}
+.content-header{
+    margin: 0 auto;
+    width: 1200px;
+    justify-content: space-between;
+}
+.desc-header-sign_up-in{
+    justify-content: space-between;
+    width: 100%;
+}
+.shopee-svg-icon{
+    display: inline-block;
+    width: 190px;
+    fill: rgb(238, 77, 45);
+    height: 42px;
+}
+.logo-header_left{
+    margin-right: -18px;
+    margin-top: -0.438rem;
+}
+.header-text{
+    font-size: 24px;
+    color: #000;
+
+}
+.help-sign-up-in{
+    font-size: 14px;
+    margin-right: 15px;
+    color: rgb(238, 77, 45);
+    text-decoration: none;
+}
+.wrraper-input{
+    width: 1040px;
+    margin: 0 auto;
+    height: 600px;
+    min-height: 600px;
+    justify-content: flex-end;
+}
+.wrrapper-input_inner{
+    width: 400px;
+    min-height: 482px;
+}
+.info-sign-up-in{
+    background-color: #fff;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .14);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.input-header{
+    justify-content: space-between;
+    min-height: 80px;
+}
+.desc-input_header{
+    justify-content: space-between;
+    width: 100%;
+    padding: 22px 30px;
+
+}
+.input-header_text{
+    color: rgb(34, 34, 34);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+.sign-up_QR{
+    margin-left: 20px;
+    justify-content: flex-end;
+}
+.sign-up_QR-title,
+.sign-up_QR-title::after{
+    background-color: rgb(254, 250, 236);
+}
+.sign-up_QR-title::after{
+    content: "";
+    height: 12px;
+    position: absolute;
+    top:50%;
+    right: -12px;
+    transform: rotate(45deg) translateX(-50%);
+    width: 12px;
+    border-right: 2px solid rgb(255, 191, 0);
+    border-top: 2px solid rgb(255, 191, 0);
+}
+.sign-up_QR-title{
+    color: rgb(255, 191, 0);
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid rgb(255, 191, 0);
+    border-radius: 2px;
+    padding: 12px 18px;
+    margin-right: 14px;
+}
+.sign-up_item{
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+.item-QR{
+    width: 40px;
+    height: 40px;
+}
+.input-info{
+    overflow: hidden;
+    padding: 0 30px 30px;
+}
+.info-account{
+    margin-bottom: 10px;
+}
+.info-password{
+    margin-bottom: 14px;
+}
+
+.info-inner{
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, .14);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.form-label{
+    padding: 12px;
+    flex: 1 0 0;
+    outline: none;
+    border: initial;
+}
+.form-message.invalid{
+    color: rgb(255, 66, 79);
+}
+
+.form-message{
+    font-size: 12px;
+    min-height: 1px;
+    padding-top: 4px;
+    display: inline-block;
+    height: 16px;
+}
+.show-hide_pw{
+    padding: 0px 14px 0px 12px;
+    outline: none;
+    background: transparent;
+    border: initial;
+}
+.item-pw{
+    width: 20px;
+    height: 16px;
+}
+.submit{
+    width: 100%;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: rgb(238, 77, 45);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .09);
+    border: none;
+    justify-content: center;
+    padding: 0 10px;
+}
+.size-submit{
+    height: 40px;
+    min-width: 340px;
+}
+.submit:hover{
+    cursor: pointer;
+}
+.input-help{
+    margin: 10px 0;
+    justify-content: space-between;
+}
+.help-sign-up{
+    color: #05a;
+    font-size: 12px;
+    text-decoration: none;
+}
+.select-sign-up{
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.another{
+    padding-bottom: 14px;
+}
+.border-another{
+    background-color: rgb(219, 219, 219);
+    height: 1px;
+    flex: 1 1 0;
+    width: 100%;
+}
+.text-another{
+    color: rgb(204, 204, 204);
+    font-size: 12px;
+    padding: 0 16px;
+
+}
+.options-login{
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+.option-login,
+.option-login_item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.option-login_item{
+    flex-shrink: 0;
+    height: 36px;
+    width: 36px;
+}
+.size-option{
+    background-color: #fff;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, .26);
+    border-radius: 2px;
+    color: rgba(0, 0, 0, .87);
+    font-size: 14px;
+    outline: none;
+    padding: 0 2px;
+}
+.flex-option{
+    flex: 1;
+    margin: 5px;
+    padding-right: 8px;
+}
+.login-item{
+    font-size: 22px;
+}
+.href-sign-in{
+    margin-bottom: 30px;
+}
+.desc-sign-in{
+    font-size: 14px;
+    color: rgba(0, 0, 0, .26);
+    padding-right: 4px;
+    justify-content: center;
+    width: 100%;
+
+}
+.sign-in{
+    color: rgb(238, 77, 45);
+    text-decoration: none;
+}
+

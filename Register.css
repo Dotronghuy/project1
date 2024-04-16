@@ -1,0 +1,17 @@
+.rules{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(0, 0, 0, .87);
+}
+.text-rules{
+    padding: 0 25px;
+    margin-right: 5px;
+}
+.rule{
+    cursor: pointer;
+    color: rgb(238, 77, 45);
+    text-decoration: none;
+
+}
+

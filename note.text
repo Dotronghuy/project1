@@ -1,16 +1,31 @@
 /*
-  1. render slider - done
-  3. render flash sale - done
-  4. render shoppe mall - done
+  1. render slider -> done
+  3. render flash sale -> done
+  4. render shoppe mall -> done
   --> sinh ra 1 lỗi ko có cái xem tất cả của shoppe mall 
-  6. render search top done
+  6. render search top ->done
   5. render body  
 **/
-// tạo hiệu ứng trượt ở siler/ shopp mall / danh mục  done
-// tạo coutdown-time ở flash sale  - done
-// thêm class active-dot khi banner shoppmall/siler trượt  done
-// xóa hover language-show ở fisrt child 
-// mở mini-msg và tạo khung chat-msg ở html(chưa tạo) 
+// tạo hiệu ứng trượt ở siler/ shopp mall / danh mục  ->done
+// tạo coutdown-time ở flash sale  -> done
+// thêm class active-dot khi banner shoppmall/siler trượt  ->done
+// xóa hover language-show ở fisrt child  -> done
+// log in sign in -> done
+//tạo mini-msg và tạo khung chat-msg ở html  done 
 // ở phần header thêm hiệu ứng hiện mờ mờ subnav
+                        <!-- tìm hiểu về pop-up or tooltip -->
+
+
+                        
+//render ra chat-box khi bấm vào mini-mini_msg
+// extions tương ứng thu gọn thu nhỏ
+// click vào show-status hiện ra sub-status
+// click vào input search sẽ change width
+
+// làm cuối cùng
+// khi vào trang sẽ tự động hiện modal voucher
+
+
+
 
 còn mini-msg và body 
