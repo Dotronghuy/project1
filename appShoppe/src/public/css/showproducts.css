@@ -1,0 +1,322 @@
+
+.container{
+    padding-bottom: 25px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.products-dealts{
+    margin-top: 40px;
+}
+.card{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .85);
+}
+.products-dealts_image{
+    width: 450px;
+    flex-shrink: 0;
+    padding: 15px;
+}
+.dealts-image{
+    flex-direction: column;
+}
+.shoppe-image_container{
+    width: 100%;
+    padding-bottom: 100%;
+}
+.image-dealts{
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.item-social_network{
+    margin-top: 20px;
+}
+.flex-item{
+    align-items: center;
+    justify-content: center;
+}
+.share-social_network{
+    padding: 0 30px;
+    border-right: 1px solid rgba(0, 0, 0, .09);
+    align-items: center;
+    justify-content: center;
+}
+.title-share{
+    color: #222;
+    font-size: 16px;
+}
+.icon-social_network{
+    border: 0;
+    height: 25px;
+    width: 25px;
+    margin-left: 5px;
+    outline: 0;
+    overflow: visible;
+}
+.icon-social{
+    background-color: initial;
+    background-size: 100%;
+    background-image: url(../imageJS/logo\ social\ network.png);
+}
+.position-icon-ms{
+    background-position: 0 -100%;
+}
+.position-icon-fb{
+    background-position: 0 0 ;
+}
+.position-icon-pinterest{
+    background-position: 0 -300%;
+}
+.position-icon-tw{
+    background-position: 0 -400%;
+}
+.quanlity-like_products{
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+.like-product{
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    overflow: visible;
+}
+
+.like{
+    margin-right: 10px;
+}
+.title-like{
+    color: #222;
+    font-size: 16px;
+}
+.products-dealts_desc{
+    flex: 1 0 auto;
+    width: 0;
+}
+.flex-auto{
+    flex: 1 0 auto;
+}
+.product-dealts{
+    padding: 20px 35px 0 20px;
+    width: 100%;
+}
+.title-deatls{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    max-height: 48px;
+    max-width: 665px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    vertical-align: sub;
+    margin-left: 8px;
+}
+.price{
+    background-color: #fafafa;
+    padding: 15px 20px;
+}
+.item-center{
+    align-items: center;
+}
+.prices{
+    flex-basis: 625px;
+    flex-wrap: wrap;
+    min-height: 36px;
+    width: 625px;
+}
+.desc-price{
+    color: #d0011b;
+    font-size: 30px;
+    font-weight: 500;
+}
+.other-option_deatls{
+    margin-top: 25px;
+    padding: 0 20px;
+}
+.flex-colunm{
+    flex-direction: column;
+}
+.color-options{
+    padding-bottom: 15px;
+    align-items: center;
+    color: #222;
+    margin: -4px 0 0 -4px;
+    padding: 4px;
+}
+.title-color{
+    color: #757575;
+    flex-shrink: 0;
+    font-weight: 400;
+    font-size: 16px;
+    width: 110px;
+    text-transform: capitalize;
+}
+.color-option{
+    flex-basis: 515px;
+    flex-wrap: wrap;
+    margin-top: -8px;
+    max-height: 220px;
+    max-width: 515px;
+}
+.option-products{
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .09);
+    border-radius: 2px;
+    color: rgba(0, 0, 0, .8);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    margin: 8px 8px 0 0;
+    padding: 8px;
+    text-align: left;
+    padding-left: 40px;
+    text-transform: capitalize;
+}
+.option-product{
+    height: 24px;
+    left: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+}
+.quanlity-option{
+    color: #757575;
+    margin-top: 15px;
+}
+.shoppe-input_quanlity{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+.option{
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .09);
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 300;
+    height: 32px;
+    width: 32px;
+    justify-content: center;
+    line-height: 1;
+    transition: background-color .1s cubic-bezier(.4,0,.6,1);
+}
+.option-total{
+    display: inline-block;
+    fill: currentColor;
+    position: relative;
+}
+.option .option-total{
+    flex-shrink: 0;
+    height: 10px;
+    width: 10px;
+    font-size: 10px;
+}
+.quanlity-number   {
+    width: 50px;
+    height: 32px;
+    text-align: center;
+    cursor: text;
+    font-size: 16px;
+    font-weight: 400;
+}
+.flex-quanlity   {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, .09);
+    color: rgba(0, 0, 0, .8);
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    transition: background-color .1s cubic-bezier(.4,0,.6,1);
+}
+.button-section{
+    padding-left: 20px;
+}
+.icon-add-to-cart{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+.btn{
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 2px;
+    justify-content: center;    
+}
+.btn-h{
+    height: 48px;
+    padding: 0 20px;
+}
+.btn-tinted {   
+    border: 1px solid #d0011b;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
+    color: #d0011b;
+    margin-right: 24px;
+}
+.buy{
+    margin-right: 15px;
+    font-size: 14px !important;
+    min-width: 180px !important;
+}
+.btn-solid{
+    background-color: #d0011b;
+    color: #fff;
+}
+.policys-shoppe{
+    display: flex;
+    flex-direction: column;
+    margin: 25px 15px;
+    row-gap: 15px;
+}
+.policy-shoppe{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #fff;
+    gap: 4px;
+    align-items: center;
+}
+.policy:first-child{
+    justify-self: start;
+}
+.policy{
+    font-size: 16px;
+}
+.desc-policy{
+    display: flex;
+    position: relative;
+}
+.policy-text{
+    cursor: help;
+    color: #4a4a4a;
+    display: flex;
+    font-size: 16px;
+    width: 100%;
+}
+.image-policy{
+    flex-shrink: 0;
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+}
+
+
+
+
+
