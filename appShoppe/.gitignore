@@ -1,4 +1,8 @@
-node_modules
+# bỏ qua thư mục node_modules
+node_modules/
 
+# bỏ qua các file txt
 .txt
 
+# bỏ qua file tạm của vscode
+.vscode/
