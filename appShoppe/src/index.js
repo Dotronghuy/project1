@@ -26,26 +26,51 @@ const hbsHelper = {
   },
   username: (userKey) => {
     if (userKey) {
-      return `<span class="container-link desc-title">${userKey}</span>`
+      return `<span class="container-link desc-title show-move">
+      ${userKey}
+      <div class="userkey-popover_target--show arrow-up">
+                                    <div class="desc-show-userkey default">
+                                        <div class="show-handle">
+                                            <a href="/?logout=true" class="handle-exit">Đăng xuất</a>
+                                        </div>
+                                    </div>
+                               </div>
+      </span>`
     } else {
-      return `<a href="register" class="sing-up container-link desc-title start">Đăng Ký</a>
+      return `<a href="/register" class="sing-up container-link desc-title start">Đăng Ký</a>
               <div class="nav-wall"></div>
-              <a href="login" class="log-in container-link desc-title">Đăng Nhập</a>`
+              <a href="/login" class="log-in container-link desc-title">Đăng Nhập</a>`
     }
 
   },
-  notification: (message) => {
-    return ` <div class="desc-show default">
+  notification: (userKey, notificationMessage) => {
+    if (userKey) {
+      return `<div class="desc-show default">
                                 <div class="show-avatar">
-                                    <img src="wrapperImage/img/user.jpg" alt="" class="avatar-user center" style="display: none;">
-                                    <span class="title-avatar" style=" color: red; font-size: 30px">${message}</span>
+                                    <span class="title-avatar text-notification-message">${notificationMessage}</span>
                                 </div>
                             </div>`
+    } else {
+      return `<div class="desc-show default">
+                                <div class="show-avatar">
+                                    <img src="wrapperImage/img/user.jpg" alt="" class="avatar-user center">
+                                    <span class="title-avatar">Đăng nhập để xem Thông báo</span>
+                                </div>
+                                <div class="btn-log_sign">
+                                    <a class="btn-sing_up default-btn " src="" href="/register"
+                                        style="text-decoration: none; color:#000">Đăng ký</a>
+                                    <a class="btn-log_in default-btn " href="/login"
+                                        style="text-decoration: none; color:#000">Đăng nhập</a>
+                                </div>
+                            </div>`
+    }
   },
-  handleNone: (none) => {
-    return `
-      
-    `
+  handleNone: (userKey, handle) => {
+    if (userKey) {
+      return handle
+    } else {
+      return `<a href="" class="become-seller desc_container wall flex">Trở thành người bán Shoppe</a>`;
+    }
   }
 
 }

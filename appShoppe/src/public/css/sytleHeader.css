@@ -178,6 +178,48 @@
     display: block;
 }
 
+.userkey-popover_target--show {
+    display: none;
+    position: absolute;
+    top: 24px;
+    left: -92px;
+}
+
+.show-move:hover .userkey-popover_target--show {
+    display: block;
+}
+
+.desc-show-userkey {
+    width: 152px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    color: #000
+}
+
+.show-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.show-handle a {
+    text-decoration: none;
+}
+
+.handle-exit {
+    font-size: 20px;
+    opacity: .5;
+    color: #000;
+}
+
+.handle-exit:hover {
+    color: red;
+}
+
 .desc-show {
     width: 406px;
     height: 340px;
@@ -626,4 +668,10 @@
     font-weight: 300;
     font-size: 14px;
     opacity: 0.7;
+}
+
+.text-notification-message {
+    font-size: 32px;
+    color: red;
+    opacity: 1;
 }

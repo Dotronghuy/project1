@@ -6,9 +6,13 @@ class productShoppe {
     Shoppe.findOne({ title: req.params.title })
       .lean()
       .then((product) => {
+        const userKey = req.session.user;
+        const notificationMessage = userKey ? "Chức năng chưa hoàn thiện" : "";
         res.render("products/showproducts", {
           layout: "showproducts",
           product,
+          userKey,
+          notificationMessage: notificationMessage,
         });
       })
       .catch(next);

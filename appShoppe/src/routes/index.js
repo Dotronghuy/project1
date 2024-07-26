@@ -10,14 +10,12 @@ const showproduct = require("./showproducts");
 
 // render view products
 router.use("/products", showproduct);
-router.use('/register',user);
-router.use('/',user);
+router.use('/register', user);
+router.use('/', user);
 
 
 // render view login and register
 router.get("/login", function (req, res) {
-  // tìm điều kiện để nhận biết đấy là user login và sẽ redner ra home và ngoặc lại
-  
   res.render("login", { layout: "login" });
 });
 
@@ -99,8 +97,26 @@ router.use('/', cart)
 
 // render view home
 router.get("/", async function (req, res) {
-  const products = await Products.find();
-  res.render("home", { layout: "main", products: products });
+  if (req.query.logout === 'true') {
+    req.session.destroy((err) => {
+      if (err) {
+        return res.status(500).send('Đăng xuất thất bại');
+      }
+      return res.redirect('/');
+    });
+  } else {
+    const products = await Products.find();
+    const userKey = req.session.user;
+    const notificationMessage = userKey ? "Chức năng chưa hoàn thiện" : "";
+    res.render("home", {
+      layout: "main",
+      products: products,
+      userKey: userKey,
+      notificationMessage: notificationMessage,
+      handle: ``
+
+    });
+  }
 });
 
 module.exports = router;

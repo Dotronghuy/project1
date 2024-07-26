@@ -2,7 +2,12 @@ const User = require('../models/user');
 const userServiecs = require('../serviecs/UserServiecs')
 const bcrypt = require('bcrypt');
 const Products = require('../models/products');
+const jwt = require('jsonwebtoken');
+const jwtVerify = require('../../app/serviecs/JwtVerify');
+const fs = require('fs');
+const path = require('path');
 
+const logFilePath = path.join(__dirname, 'login_logs.txt');
 
 const createUser = async (req, res) => {
     try {
@@ -70,22 +75,22 @@ const login = async (req, res) => {
     console.log(userKey, password);
     try {
         const user = await User.findOne({ userKey: userKey });
-        console.log(user);
         if (!user) {
             return res.status(401).json({ message: 'User not found' });
         }
         const isPassword = bcrypt.compareSync(password, user.password);
-        console.log("!2345")
-        console.log(isPassword);
         if (isPassword) {
             const username = userKey.split('@')[0];
 
             req.session.user = username;
+            const logEntry = `${new Date().toISOString()} - User ${username} logged in\n`;
+            fs.appendFile(logFilePath, logEntry, (err) => {
+                if (err) {
+                    console.error('Failed to log login:', err);
+                }
+            });
 
-            const products = await Products.find();
-            console.log(products);
-            res.render("home", { layout: "main", products: products, userKey: req.session.user, notificationMessage: "Chức năng chưa hoàn thiện", handleNoneShoppe: "" });
-
+            res.redirect('/');
         } else {
             res.status(400).send('password or username incorrect')
         }
@@ -94,5 +99,13 @@ const login = async (req, res) => {
     }
 
 }
+const logout = (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Error destroying session');
+        }
+        res.redirect('/');
+    });
+}
 
-module.exports = { createUser, login };
+module.exports = { createUser, login, logout };

@@ -3,8 +3,7 @@
         <div class="container_nav container-center">
             <div class="container_left">
                 <a href="" class="page-seller desc_container wall">Kênh người bán</a>
-                <a href="" class="become-seller desc_container wall flex">Trở thành người bán Shoppe</a>
-                {{!-- {{{ handleNone handleNoneShoppe}}} --}}
+                {{{ handleNone userKey handle}}}
                 <div class="dowload-app wall flex">
                     <a href="" class="title-dowload desc_container flex">Tải ứng dụng</a>
                     <div class="dowload-app_subnav none" style="transition-delay: .2s; left: 0;">
@@ -46,17 +45,7 @@
                             </a>
                         </div>
                         <div class="desc-popover_target--show arrow-up">
-                            <div class="desc-show default">
-                                <div class="show-avatar">
-                                    <img src="wrapperImage/img/user.jpg" alt="" class="avatar-user center">
-                                    <span class="title-avatar">Đăng nhập để xem Thông báo</span>
-                                </div>
-                                <div class="btn-log_sign">
-                                    <a class="btn-sing_up default-btn " src="">Đăng ký</a>
-                                    <a class="btn-log_in default-btn ">Đăng nhập</a>
-                                </div>
-                            </div>
-                            {{!-- {{{ notification notificationMessage}}} --}}
+                            {{{notification userKey notificationMessage}}}
                         </div>
                     </div>
                 </li>
@@ -92,7 +81,7 @@
 
     <div class="container-center header-width_search">
         <div class="wrap-container container_nav">
-            <a href="" class="header-width_seacrch__logo">
+            <a href="/" class="header-width_seacrch__logo">
                 <div class="wrap-header_logo">
                     <svg viewBox="0 0 192 65" class="svg-icon">
                         <g fill-rule="evenodd">
