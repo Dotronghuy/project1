@@ -5,4 +5,4 @@ node_modules/
 .txt
 
 # bỏ qua file tạm của vscode
-.vscode/
+.vscode
