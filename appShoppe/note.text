@@ -25,14 +25,9 @@
 
 // trang chi tiết sản phẩm 
 - UI/UX của trang chi tiết sản phẩm -> done
-- khi chưa đăng nhập mà bấm vào thêm giỏ hàng or mua thì sẽ chuyển hướng sang đăng nhập 
-- khi đăng nhập bấm vào giỏ hàng sẽ chuyển về giỏ hàng
-- khi đăng nhập bấm vào mua sẽ chuyển hướng sang trang giỏ hàng rồi tự động tick đỏ lên và hiển thị số tiền tương ứng với mỗi tick
 
 // trang giỏ hàng
 -UI/UX của trang giỏ hàng -> done
-- tick lựa chọn các sản phẩm tự động tiền lại với nhau 
-- có nút tíck sản phẩm khi tick vào sẽ tick hết các sản phẩm trong đó và ngược lại
 
 // xử lý logic ở showproducts
 - khi chưa đăng nhập mà bấm vào thêm giỏ hàng / mua ngay sẽ chuyển qua ui đăng nhập

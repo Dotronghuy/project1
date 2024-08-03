@@ -53,7 +53,7 @@ const hbsHelper = {
     } else {
       return `<div class="desc-show default">
                                 <div class="show-avatar">
-                                    <img src="wrapperImage/img/user.jpg" alt="" class="avatar-user center">
+                                    <img src="/wrapperImage/img/user.jpg" alt="" class="avatar-user center">
                                     <span class="title-avatar">Đăng nhập để xem Thông báo</span>
                                 </div>
                                 <div class="btn-log_sign">
@@ -70,6 +70,39 @@ const hbsHelper = {
       return handle
     } else {
       return `<a href="" class="become-seller desc_container wall flex">Trở thành người bán Shoppe</a>`;
+    }
+  },
+  handleUserProducts: (userKey, handle) => {
+    if (!userKey) {
+      return `                      <div class="flex">
+                                        <a href="/login" type="button" class="btn btn-tinted btn-h to-cart  default">
+                                            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/b96050554b3be4feea08.svg"
+                                                alt="" class="icon-add-to-cart">
+                                            <span>Thêm vào giỏ hàng</span>
+                                        </a>
+                                        <a href="/login" type="button" class="btn btn-solid btn-h buy default"> Mua ngay
+                                        </a>
+                                    </div>
+                                    `
+    } else {
+      return `  <div class="flex">
+                                        <a  type="button" class="btn btn-tinted btn-h to-cart  default" onclick="showModal(event)">
+                                            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/b96050554b3be4feea08.svg"
+                                                alt="" class="icon-add-to-cart">
+                                            <span>Thêm vào giỏ hàng</span>
+                                        </a>
+                                        <div id="modalAdd" class="modal-add--show-cart">
+                                            <div class="modal-add-warapper flex flex-center flex-col">
+                                                <i class="fa-regular fa-circle-check modal-add--check"></i>
+                                                <div class="modal-title">
+                                                    Sản phẩm đã được thêm vào Giỏ Hàng
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="/cart" type="button" class="btn btn-solid btn-h buy default"> Mua ngay
+                                        </a>
+                                    </div>
+      `
     }
   }
 

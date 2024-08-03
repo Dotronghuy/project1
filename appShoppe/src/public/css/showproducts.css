@@ -371,3 +371,34 @@
     width: 18px;
     margin-right: 5px;
 }
+
+.modal-add--show-cart.show-modal {
+    display: block;
+}
+
+.modal-add--show-cart {
+    display: none;
+    position: absolute;
+    top: 40%;
+    z-index: 10;
+    left: 40%;
+}
+
+.modal-add-warapper {
+    width: 410px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: #aad4c8;
+    box-shadow: 2px 4px 20px rgb(92 83 83);
+    justify-content: center;
+}
+
+.modal-add--check {
+    margin-bottom: 8px;
+    font-size: 36px;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 400;
+}

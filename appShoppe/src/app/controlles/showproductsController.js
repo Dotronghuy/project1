@@ -13,6 +13,7 @@ class productShoppe {
           product,
           userKey,
           notificationMessage: notificationMessage,
+          handle: ``
         });
       })
       .catch(next);
