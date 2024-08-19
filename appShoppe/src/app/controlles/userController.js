@@ -43,32 +43,7 @@ const createUser = async (req, res) => {
 
 }
 
-// const loginUser = async (req, res) => {
-//     try{
-//         const { userKey, password} = req.body;
-//         const re =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//         const isCheckEmail = re.test(userKey);
-//         if(!userKey){
-//             return res.status(400).json({
-//                 status: 'error',
-//                 message: 'User key is required'
-//             })
-//         }else if(!isCheckEmail){
-//             return res.status(400).json({
-//                 status: 'error',
-//                 message: 'User key must be a valid email address'
-//             })
-//         }
 
-//         const register = await userServiecs.loginUser(req.body);
-//         return res.status(200).json(register);
-
-//     }catch(e){
-//         return res.status(400).json({
-//             message: e
-//         })
-//     }
-// }
 
 const login = async (req, res) => {
     const { userKey, password } = req.body;

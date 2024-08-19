@@ -6,6 +6,8 @@ const cart = require('./cart');
 const router = express.Router();
 
 
+
+
 const showproduct = require("./showproducts");
 
 // render view products
@@ -108,13 +110,14 @@ router.get("/", async function (req, res) {
     const products = await Products.find();
     const userKey = req.session.user;
     const notificationMessage = userKey ? "Chức năng chưa hoàn thiện" : "";
+    const chatBox = userKey ? "Chức năng chưa hoàn thiện" : "";
     res.render("home", {
       layout: "main",
       products: products,
       userKey: userKey,
       notificationMessage: notificationMessage,
-      handle: ``
-
+      handle: ``,
+      chatBox: chatBox
     });
   }
 });

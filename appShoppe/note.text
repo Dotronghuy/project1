@@ -30,7 +30,7 @@
 -UI/UX của trang giỏ hàng -> done
 
 // xử lý logic ở showproducts
-- khi chưa đăng nhập mà bấm vào thêm giỏ hàng / mua ngay sẽ chuyển qua ui đăng nhập
+- khi chưa đăng nhập mà bấm vào thêm giỏ hàng / mua ngay sẽ chuyển qua ui đăng nhập -> done
 - khi đã đăng nhập click thêm vào giỏ hàng sẽ gửi data products lên DB và hiện ra thông báo đã thêm 
 - ----------------------- mua ngay sẽ gửi data products lên DB và chuyển hướng sang cart (có tích sẵn sản phẩm đã click)
 - xử lý thanh số lượng 

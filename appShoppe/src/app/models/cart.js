@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 
 const cartDesc = new Schema(
   {
-    userKey: { type: String },
-    image: { type: String },
-    utilities: { type: String },
-    title: { type: String },
-    price: { type: String },
+    idUsers: { type: Schema.Types.ObjectId, ref: 'user', required: true },
+    products: [{
+      idProducts: { type: Schema.Types.ObjectId, ref: 'product', required: true },
+      image: { type: String },
+      title: { type: String },
+      price: { type: String },
+      quanlity: { type: Number, default: 1 },
+    }],
   },
   { timestamps: true }
 );

@@ -45,17 +45,7 @@
                             </a>
                         </div>
                         <div class="desc-popover_target--show arrow-up">
-                            <div class="desc-show default">
-                                <div class="show-avatar">
-                                    <img src="wrapperImage/img/user.jpg" alt="" class="avatar-user center">
-                                    <span class="title-avatar">Đăng nhập để xem Thông báo</span>
-                                </div>
-                                <div class="btn-log_sign">
-                                    <a class="btn-sing_up default-btn " src="">Đăng ký</a>
-                                    <a class="btn-log_in default-btn ">Đăng nhập</a>
-                                </div>
-
-                            </div>
+                            {{{notification userKey notificationMessage}}}
                         </div>
                     </div>
                 </li>
@@ -82,13 +72,8 @@
                         </div>
                     </div>
                 </li>
-                <!-- {{#if userKey}}
-                    <span class="container-link desc-title">{{ removeDomain userKey }}</span>
-                    {{else}} -->
-                <a href="register" class="sing-up container-link desc-title start">Đăng Ký</a>
-                <div class="nav-wall"></div>
-                <a href="login" class="log-in container-link desc-title">Đăng Nhập</a>
-                <!-- {{/if}} -->
+                {{{ username userKey }}}
+
 
             </div>
         </div>
@@ -152,6 +137,7 @@
             <div class="option-products_cart">Thao tác</div>
         </div>
         <section class="products-cart default">
+            {{#each cart}}
             <div class="wrrapper-products">
                 <div class="product-cart">
                     <div class="flex-center">
@@ -163,11 +149,10 @@
                         <div class="list-product-cart default">
                             <div class="item-prodcut-cart">
                                 <a href="">
-                                    <img src="../imageJS/productRow1-1.webp" alt="" class="image-cart">
+                                    <img src="{{this.image}}" alt="" class="image-cart">
                                 </a>
                                 <div class="title-product-cart">
-                                    <a href="" class="title-product">Tai nghe không dây VitogTWS Tai nghe Bluetooth
-                                        Tai nghe Bass Tai nghe thể thao Air Tai nghe có Mic</a>
+                                    <a href="" class="title-product">{{this.title}}</a>
 
                                     <div class="restore-cart flex-center">
                                         <div class="restore">Đổi ý miễn phí 15 ngày</div>
@@ -177,7 +162,7 @@
                         </div>
                         <div style="width: 14.24138%;"></div>
                         <div class="price-product">
-                            <span>50.000</span>
+                            <span>{{this.price}}</span>
                         </div>
                         <div class="quanlity-product">
                             <div style="margin-right: 15px;">
@@ -202,8 +187,8 @@
                             </div>
                         </div>
                         <div class="total-price-product">
-                            <span>₫50.000</span>
-                            <span class="total-hidden">Total price: ₫50.000</span>
+                            <span>{{this.price}}</span>
+                            <span class="total-hidden">Total price: {{this.price}}</span>
                         </div>
                         <div class="option-product-cart">
                             <button class="delete">Xóa</button>
@@ -211,6 +196,7 @@
                     </div>
                 </div>
             </div>
+            {{/each }}
         </section>
     </div>
 </div>

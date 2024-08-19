@@ -6,8 +6,10 @@ const hbs = require("express-handlebars");
 const app = express();
 const port = 3000;
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const router = require("./routes");
 const db = require("./app/config/db/index");
+const { default: mongoose } = require("mongoose");
 
 
 app.use("/static", express.static(path.join(__dirname, "node_modules")));
@@ -72,7 +74,7 @@ const hbsHelper = {
       return `<a href="" class="become-seller desc_container wall flex">Trở thành người bán Shoppe</a>`;
     }
   },
-  handleUserProducts: (userKey, handle) => {
+  handleUserProducts: (userKey, product) => {
     if (!userKey) {
       return `                      <div class="flex">
                                         <a href="/login" type="button" class="btn btn-tinted btn-h to-cart  default">
@@ -85,8 +87,9 @@ const hbsHelper = {
                                     </div>
                                     `
     } else {
-      return `  <div class="flex">
-                                        <a  type="button" class="btn btn-tinted btn-h to-cart  default" onclick="showModal(event)">
+      return `          
+                                  <div class="flex">
+                                        <a href="/add-cart/${product._id}" class="btn btn-tinted btn-h to-cart  default"  onclick="showModal(event)">
                                             <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/b96050554b3be4feea08.svg"
                                                 alt="" class="icon-add-to-cart">
                                             <span>Thêm vào giỏ hàng</span>
@@ -95,14 +98,30 @@ const hbsHelper = {
                                             <div class="modal-add-warapper flex flex-center flex-col">
                                                 <i class="fa-regular fa-circle-check modal-add--check"></i>
                                                 <div class="modal-title">
-                                                    Sản phẩm đã được thêm vào Giỏ Hàng
+                                             Sản phẩm đã được thêm vào Giỏ Hàng
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="/cart" type="button" class="btn btn-solid btn-h buy default"> Mua ngay
+                                               <a href="/cart" type="button" class="btn btn-solid btn-h buy default"> Mua ngay
                                         </a>
                                     </div>
+          
       `
+    }
+  },
+  handleChatbox: (userKey, chatBox) => {
+    if (!userKey) {
+      return `
+         <div class="content-chat-box_right">
+                        Chào mừng bạn đến với Shopee Chat
+          </div>
+      `
+    } else {
+      return `
+           <div class="content-chat-box_right">
+                        ${chatBox}
+            </div>
+        `
     }
   }
 
@@ -112,7 +131,8 @@ app.use(session({
   secret: 'your_secret_key', // Thay thế bằng khóa bí mật của bạn
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // Đặt secure: true nếu sử dụng HTTPS
+  cookie: { secure: false }, // Đặt secure: true nếu sử dụng HTTPS
+  store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/appShoppe" }),
 }));
 
 
