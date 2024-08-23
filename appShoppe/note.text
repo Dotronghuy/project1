@@ -31,11 +31,13 @@
 
 // xử lý logic ở showproducts
 - khi chưa đăng nhập mà bấm vào thêm giỏ hàng / mua ngay sẽ chuyển qua ui đăng nhập -> done
-- khi đã đăng nhập click thêm vào giỏ hàng sẽ gửi data products lên DB và hiện ra thông báo đã thêm 
-- ----------------------- mua ngay sẽ gửi data products lên DB và chuyển hướng sang cart (có tích sẵn sản phẩm đã click)
+-- nhận được id người dùng và id sản phẩm -> done
+-- cartcontroller router cart cartServices -> done
+- khi đã đăng nhập click thêm vào giỏ hàng sẽ gửi data products lên DB và hiện ra thông báo đã thêm -> done
+- ----------------------- mua ngay sẽ gửi data products lên DB và chuyển hướng sang cart (có tích sẵn sản phẩm đã click) -> done 1/2
 - xử lý thanh số lượng 
-  + ở showproducts handle input số lượng + - 
-  + khi số lượng là 1 só cụ thể ( ví dụ 2 ) và bấm thêm or mua thì gửi lên DB cũng là số lượng đấy
+  + ở showproducts handle input số lượng + - -> done
+  + khi số lượng là 1 só cụ thể ( ví dụ 2 ) và bấm thêm or mua thì gửi lên DB cũng là số lượng đấy -> done
 
 // xử lý logic cart
 - khi chưa đăng nhập thì cart trống ( ở icon cart home )
@@ -54,8 +56,8 @@
 
 // Admin
 - có quyền xóa products bất ký và khi xóa sẽ xóa cả DB ở home / cart (user nếu có products ) 
-- có quyền xóa account user
-- kiểm soát đơn hàng của user (thời gian giao , tiền)
+- có quyền xóa account user 
+- kiểm soát đơn hàng của user ( hiện thị hình ảnh tên sp tiền số lượng )
 
 // handle Footer 
 - chỉnh sửa lại code không để code cứng -> js -> render lại code cho view

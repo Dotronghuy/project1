@@ -225,7 +225,8 @@
                                                             </polygon>
                                                         </svg>
                                                     </button>
-                                                    <input type="text" value="1" class="quanlity-number flex-quanlity">
+                                                    <input type="number" id="quanlityInput" min="1" value="1"
+                                                        class="quanlity-number flex-quanlity">
                                                     <button class="option option-add">
                                                         <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0"
                                                             y="0" class="option-total">
@@ -243,7 +244,7 @@
                             </div>
                             <div style="margin-top: 15px;">
                                 <div class="button-section">
-                                    {{{ handleUserProducts userKey product}}}
+                                    {{{handleUserProducts userKey product}}}
                                 </div>
                             </div>
                             <div style="margin-top: 30px; border-top: 1px solid rgba(0, 0, 0,0.05);">

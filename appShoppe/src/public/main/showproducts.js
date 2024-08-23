@@ -16,13 +16,16 @@ for (let i = 0; i < btnAdd.length; i++) {
 }
 
 
-function showModal(event) {
-    event.preventDefault();
-    const modal = document.getElementById('modalAdd');
-    modal.style.display = 'block';
 
-    setTimeout(() => {
-        modal.style.display = 'none';
-    }, 1500);
-};
+
+
+
+
+
+
+
+
+
+
+
 

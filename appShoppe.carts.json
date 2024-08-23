@@ -1,0 +1,101 @@
+[{
+  "_id": {
+    "$oid": "66c4c58ad3c627a78ca5d61a"
+  },
+  "idUsers": {
+    "$oid": "668ea1103971580c26e5d021"
+  },
+  "products": [
+    {
+      "idProducts": {
+        "$oid": "667b02eeb14d5f9e5c78f5b5"
+      },
+      "image": "http://localhost:3000/uploads/image-1719337710619productRow1-1.webp",
+      "title": "Tai nghe không dây VitogTWS Tai nghe Bluetooth Tai nghe Bass Tai nghe thể thao Air Tai nghe có Mic",
+      "price": "50.000",
+      "quanlity": 10,
+      "_id": {
+        "$oid": "66c4c58ad3c627a78ca5d61c"
+      }
+    },
+    {
+      "idProducts": {
+        "$oid": "667b037974340ccae2937474"
+      },
+      "image": "http://localhost:3000/uploads/image-1719337849371productRow1-2.webp",
+      "title": "  💖Đồ chơi lắp ráp Kuromi Búp bê hoạt hình DIY Puzzle Giáo dục building block quà tặng cho trẻ em",
+      "price": "5.000",
+      "quanlity": 2,
+      "_id": {
+        "$oid": "66c4ceee2bc7582fa67c1556"
+      }
+    },
+    {
+      "idProducts": {
+        "$oid": "667b040a47a645ece7994cd2"
+      },
+      "image": "http://localhost:3000/uploads/image-1719337994615productRow1-3.webp",
+      "title": "Bút Gel MIGA Bút Bi Nước Mực Gel Đen Xanh Đỏ Khô Nhanh Ngòi 0.5mm, Mực Đều, Nét Chữ Đẹp Đủ Màu",
+      "price": "1.000",
+      "quanlity": 5,
+      "_id": {
+        "$oid": "66c8ca7c07ccf0c44e44e74a"
+      }
+    },
+    {
+      "idProducts": {
+        "$oid": "667b05741ec5a7ee43101d91"
+      },
+      "image": "http://localhost:3000/uploads/image-1719338356707productRow2-5.webp",
+      "title": "Sổ lò xo basic A6 A5 B5 A4 160 trang kẻ caro kẻ ngang vở tập bullet journal note planner klong deli SỔ BÌA NHỰA",
+      "price": "10.500",
+      "quanlity": 2,
+      "_id": {
+        "$oid": "66c8cbef2c40873f5241d550"
+      }
+    },
+    {
+      "idProducts": {
+        "$oid": "667b054a1ec5a7ee43101d8e"
+      },
+      "image": "http://localhost:3000/uploads/image-1719338314361productRow2-4.webp",
+      "title": "Bình acquy Lithium 100AH - 64 cell - 11.5kg",
+      "price": "3.650.000",
+      "quanlity": 3,
+      "_id": {
+        "$oid": "66c8cc172c40873f5241d55d"
+      }
+    },
+    {
+      "idProducts": {
+        "$oid": "667b043c1ec5a7ee43101d7c"
+      },
+      "image": "http://localhost:3000/uploads/image-1719338044495productRow1-4.webp",
+      "title": "SET 100 Chiếc Khẩu Trang 5D Cao Cấp Hoàng Quân",
+      "price": "1.000",
+      "quanlity": 1,
+      "_id": {
+        "$oid": "66c8cd1b2c40873f5241d585"
+      }
+    },
+    {
+      "idProducts": {
+        "$oid": "667b04671ec5a7ee43101d7f"
+      },
+      "image": "http://localhost:3000/uploads/image-1719338087879productRow1-5.webp",
+      "title": "ÁO ĐIỀU HÒA NHẬT BẢN  pin 84000mAh thời gian sử dụng 12 - 24 h công suất quạt 18V - 9 cánh quạt",
+      "price": "148.000",
+      "quanlity": 1,
+      "_id": {
+        "$oid": "66c8ce73d4abf1e74bfb7b98"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-08-20T16:34:18.610Z"
+  },
+  "updatedAt": {
+    "$date": "2024-08-23T18:01:23.262Z"
+  },
+  "__v": 16
+}]

@@ -27,23 +27,23 @@ const hbsHelper = {
     return email.split('@')[0];
   },
   username: (userKey) => {
-    if (userKey) {
+    if (typeof userKey === 'string' && userKey.trim() !== '') {
+      const username = userKey.includes('@') ? userKey.split('@')[0] : userKey;
       return `<span class="container-link desc-title show-move">
-      ${userKey}
-      <div class="userkey-popover_target--show arrow-up">
-                                    <div class="desc-show-userkey default">
-                                        <div class="show-handle">
-                                            <a href="/?logout=true" class="handle-exit">Đăng xuất</a>
-                                        </div>
-                                    </div>
-                               </div>
-      </span>`
+        ${username}
+        <div class="userkey-popover_target--show arrow-up">
+          <div class="desc-show-userkey default">
+            <div class="show-handle">
+              <a href="/?logout=true" class="handle-exit">Đăng xuất</a>
+            </div>
+          </div>
+        </div>
+      </span>`;
     } else {
       return `<a href="/register" class="sing-up container-link desc-title start">Đăng Ký</a>
-              <div class="nav-wall"></div>
-              <a href="/login" class="log-in container-link desc-title">Đăng Nhập</a>`
+        <div class="nav-wall"></div>
+        <a href="/login" class="log-in container-link desc-title">Đăng Nhập</a>`;
     }
-
   },
   notification: (userKey, notificationMessage) => {
     if (userKey) {
@@ -89,22 +89,17 @@ const hbsHelper = {
     } else {
       return `          
                                   <div class="flex">
-                                        <a href="/add-cart/${product._id}" class="btn btn-tinted btn-h to-cart  default"  onclick="showModal(event)">
-                                            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/b96050554b3be4feea08.svg"
-                                                alt="" class="icon-add-to-cart">
-                                            <span>Thêm vào giỏ hàng</span>
-                                        </a>
-                                        <div id="modalAdd" class="modal-add--show-cart">
-                                            <div class="modal-add-warapper flex flex-center flex-col">
-                                                <i class="fa-regular fa-circle-check modal-add--check"></i>
-                                                <div class="modal-title">
-                                             Sản phẩm đã được thêm vào Giỏ Hàng
-                                                </div>
-                                            </div>
-                                        </div>
-                                               <a href="/cart" type="button" class="btn btn-solid btn-h buy default"> Mua ngay
-                                        </a>
+                                        <form action="/add-cart/${product._id}" method="POST" id="form-4" class="btn btn-tinted btn-h to-cart  default" data-product-id="${product._id}">
+                                            <input type="hidden" name="quanlity" id="hiddenQuanlity"> 
+                                            <input type="hidden" name="actionBuy" id="actionBuy" value="add-to-cart">   
+                                            <button type="submit" id="btnAddcart" class="button-add-cart flex-center">
+                                              <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/b96050554b3be4feea08.svg" alt="" class="icon-add-to-cart">
+                                              <span>Thêm vào giỏ hàng</span>
+                                            </button>
+                                        </form>
+                                        <button  id="btnBuyNow" class="btn btn-solid btn-h buy default"> Mua ngay </button>
                                     </div>
+                                   
           
       `
     }
@@ -124,7 +119,6 @@ const hbsHelper = {
         `
     }
   }
-
 }
 
 app.use(session({
@@ -132,7 +126,6 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }, // Đặt secure: true nếu sử dụng HTTPS
-  store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/appShoppe" }),
 }));
 
 

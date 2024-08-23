@@ -19,6 +19,53 @@
     {{{body}}}
     <script src="/main/main.js"></script>
     <script src="/main/showproducts.js"></script>
+    <script>
+        document.getElementById('btnAddcart').addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const quanlityInput = document.getElementById('quanlityInput');
+            const hiddenInputQuality = document.getElementById('hiddenQuanlity');
+            const quantity = quanlityInput.value;
+
+
+
+            hiddenInputQuality.value = quantity;
+
+            // Hiển thị modal
+            const modal = document.createElement('div');
+            modal.id = 'modalAdd';
+            modal.className = 'modal-add--show-cart';
+            modal.innerHTML = `
+                <div class="modal-add-warapper flex flex-center flex-col">
+                    <i class="fa-regular fa-circle-check modal-add--check"></i>
+                    <div class="modal-title">Sản phẩm đã được thêm vào Giỏ Hàng</div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            // Hiển thị modal và sau đó gửi form
+            setTimeout(() => {
+                document.getElementById('form-4').submit();
+                document.body.removeChild(modal);
+            }, 2000);
+        });
+
+        document.getElementById('btnBuyNow').addEventListener('click', () => {
+            const form = document.getElementById('form-4');
+            form.action = '/add-cart/' + form.dataset.productId;
+            form.method = 'POST';
+
+            const quanlityInput = document.getElementById('quanlityInput');
+            const hiddenInputQuality = document.getElementById('hiddenQuanlity');
+            hiddenInputQuality.value = quanlityInput.value;
+            document.getElementById('actionBuy').value = 'buy-now';
+
+            form.submit();
+        });
+
+
+    </script>
+
 
 </body>
 

@@ -47,17 +47,19 @@ const createUser = async (req, res) => {
 
 const login = async (req, res) => {
     const { userKey, password } = req.body;
-    console.log(userKey, password);
     try {
         const user = await User.findOne({ userKey: userKey });
         if (!user) {
-            return res.status(401).json({ message: 'User not found' });
+            return res.status(401).json({ message: 'Người dùng không tồn tại' });
         }
         const isPassword = bcrypt.compareSync(password, user.password);
         if (isPassword) {
             const username = userKey.split('@')[0];
+            req.session.user = {
+                _id: user._id,
+                name: username,
+            };
 
-            req.session.user = username;
             const logEntry = `${new Date().toISOString()} - User ${username} logged in\n`;
             fs.appendFile(logFilePath, logEntry, (err) => {
                 if (err) {
@@ -67,13 +69,13 @@ const login = async (req, res) => {
 
             res.redirect('/');
         } else {
-            res.status(400).send('password or username incorrect')
+            res.status(400).send('Mật khẩu hoặc tên người dùng không đúng');
         }
     } catch (e) {
-        res.status(500).send('Username or password is incorrect');
+        res.status(500).send('Lỗi khi đăng nhập');
     }
+};
 
-}
 const logout = (req, res) => {
     req.session.destroy((err) => {
         if (err) {

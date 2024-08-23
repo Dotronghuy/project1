@@ -107,14 +107,15 @@ router.get("/", async function (req, res) {
       return res.redirect('/');
     });
   } else {
-    const products = await Products.find();
-    const userKey = req.session.user;
-    const notificationMessage = userKey ? "Chức năng chưa hoàn thiện" : "";
-    const chatBox = userKey ? "Chức năng chưa hoàn thiện" : "";
+    const products = await Products.find().lean();
+    const user = req.session.user;
+    const username = user ? user.name : null;
+    const notificationMessage = username ? "Chức năng chưa hoàn thiện" : "";
+    const chatBox = username ? "Chức năng chưa hoàn thiện" : "";
     res.render("home", {
       layout: "main",
       products: products,
-      userKey: userKey,
+      userKey: username,
       notificationMessage: notificationMessage,
       handle: ``,
       chatBox: chatBox

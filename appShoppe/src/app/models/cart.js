@@ -9,7 +9,7 @@ const cartDesc = new Schema(
       image: { type: String },
       title: { type: String },
       price: { type: String },
-      quanlity: { type: Number, default: 1 },
+      quanlity: { type: Number, min: 1 },
     }],
   },
   { timestamps: true }

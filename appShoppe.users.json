@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "668ea1103971580c26e5d021"
+  },
+  "userKey": "huy12@gmail.com",
+  "password": "$2b$10$O2RyDYkyAWAphoxRp7o.Ze8SqcPwSTQKs/TFiJ8kc8ZsVGWwxcUgm",
+  "createdAt": {
+    "$date": "2024-07-10T14:56:16.314Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-10T14:56:16.314Z"
+  },
+  "__v": 0
+}]

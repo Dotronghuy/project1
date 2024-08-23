@@ -312,10 +312,14 @@
 }
 
 .btn-tinted {
-    border: 1px solid #d0011b;
+    border: 1px solid #ee4d2d;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
     color: #d0011b;
     margin-right: 24px;
+}
+
+.btn-tinted:hover {
+    opacity: 0.8;
 }
 
 .buy {
@@ -327,6 +331,10 @@
 .btn-solid {
     background-color: #d0011b;
     color: #fff;
+}
+
+.btn-solid:hover {
+    opacity: 0.9;
 }
 
 .policys-shoppe {
@@ -372,16 +380,18 @@
     margin-right: 5px;
 }
 
-.modal-add--show-cart.show-modal {
-    display: block;
-}
-
+/* Đặt modal ở giữa màn hình và ẩn mặc định */
 .modal-add--show-cart {
-    display: none;
     position: absolute;
     top: 40%;
-    z-index: 10;
     left: 40%;
+    z-index: 1000;
+}
+
+.modal-add--show-cart.show-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-add-warapper {
@@ -390,15 +400,29 @@
     border-radius: 20px;
     background-color: #aad4c8;
     box-shadow: 2px 4px 20px rgb(92 83 83);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .modal-add--check {
     margin-bottom: 8px;
     font-size: 36px;
+    color: #4caf50;
 }
 
 .modal-title {
     font-size: 20px;
     font-weight: 400;
+    color: #333;
+}
+
+
+.button-add-cart {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
 }

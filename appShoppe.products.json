@@ -1,0 +1,215 @@
+[{
+  "_id": {
+    "$oid": "667b02eeb14d5f9e5c78f5b5"
+  },
+  "image": "http://localhost:3000/uploads/image-1719337710619productRow1-1.webp",
+  "flag": "/imageJS/flaghandleshoppe.png",
+  "discount": "-54%",
+  "utilities": "/imageJS/inforPromotion2.png",
+  "title": "Tai nghe không dây VitogTWS Tai nghe Bluetooth Tai nghe Bass Tai nghe thể thao Air Tai nghe có Mic",
+  "voucher": "",
+  "price": "50.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:48:30.628Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:48:30.628Z"
+  },
+  "__v": 0,
+  "available": "1000 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b037974340ccae2937474"
+  },
+  "image": "http://localhost:3000/uploads/image-1719337849371productRow1-2.webp",
+  "discount": "-17%",
+  "utilities": "/imageJS/inforPromotion3.png",
+  "title": "  💖Đồ chơi lắp ráp Kuromi Búp bê hoạt hình DIY Puzzle Giáo dục building block quà tặng cho trẻ em",
+  "voucher": "Rẻ vô địch",
+  "price": "5.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:50:49.384Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:50:49.384Z"
+  },
+  "__v": 0,
+  "available": "500 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b040a47a645ece7994cd2"
+  },
+  "image": "http://localhost:3000/uploads/image-1719337994615productRow1-3.webp",
+  "discount": "-33%",
+  "utilities": "/imageJS/inforPromotion4.png",
+  "title": "Bút Gel MIGA Bút Bi Nước Mực Gel Đen Xanh Đỏ Khô Nhanh Ngòi 0.5mm, Mực Đều, Nét Chữ Đẹp Đủ Màu",
+  "voucher": "Rẻ vô địch",
+  "price": "1.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:53:14.624Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:53:14.624Z"
+  },
+  "__v": 0,
+  "available": "3586 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b043c1ec5a7ee43101d7c"
+  },
+  "image": "http://localhost:3000/uploads/image-1719338044495productRow1-4.webp",
+  "discount": "-83%",
+  "utilities": "/imageJS/inforPromotion6.png",
+  "title": "SET 100 Chiếc Khẩu Trang 5D Cao Cấp Hoàng Quân",
+  "voucher": "Rẻ vô địch",
+  "price": "1.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:54:04.503Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:54:04.503Z"
+  },
+  "__v": 0,
+  "available": "35650 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b04671ec5a7ee43101d7f"
+  },
+  "image": "http://localhost:3000/uploads/image-1719338087879productRow1-5.webp",
+  "flag": "/imageJS/flaglove+.png",
+  "discount": "-41%",
+  "utilities": "/imageJS/inforPromotion5.png",
+  "title": "ÁO ĐIỀU HÒA NHẬT BẢN  pin 84000mAh thời gian sử dụng 12 - 24 h công suất quạt 18V - 9 cánh quạt",
+  "voucher": "",
+  "price": "148.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:54:47.881Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:54:47.881Z"
+  },
+  "__v": 0,
+  "available": "45893 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b048c1ec5a7ee43101d82"
+  },
+  "image": "http://localhost:3000/uploads/image-1719338124658productRow2.webp",
+  "flag": "/imageJS/flaghandleshoppe.png",
+  "discount": "-50%",
+  "utilities": "/imageJS/inforPromotion3.png",
+  "title": "1Nóng Bán Bộ 2 Ống Tay Chống Nắng, Găng Tay Chống Nắng Hàn Quốc Let's Slim",
+  "voucher": "Rẻ vô địch",
+  "price": "1.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:55:24.660Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:55:24.660Z"
+  },
+  "__v": 0,
+  "available": "542230 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b04c11ec5a7ee43101d85"
+  },
+  "image": "http://localhost:3000/uploads/image-1719338177091productRow2-1.webp",
+  "flag": "/imageJS/flaglove.png",
+  "discount": "-90%",
+  "utilities": "/imageJS/inforPromotion2.png",
+  "title": "Dép ADl.DAS boy phố (BẢO HÀNH LỖI 1 ĐỔI 1) logo lá cây, quai ngang cao cấp chống trơn trượt, mẫu mới nhất, hottrend 2024",
+  "voucher": "Đang bán chạy",
+  "price": "2.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:56:17.098Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:56:17.098Z"
+  },
+  "__v": 0,
+  "available": "2332043 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b04ea1ec5a7ee43101d88"
+  },
+  "image": "http://localhost:3000/uploads/image-1719338218356productRow2-2.webp",
+  "discount": "-50%",
+  "utilities": "/imageJS/inforPromotion6.png",
+  "title": "Áo Thun Nam nữ cổ tròn in chữ DARLING A168, áo phông tay lỡ phong cách đường phố 2024",
+  "voucher": "",
+  "price": "19.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:56:58.359Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:56:58.359Z"
+  },
+  "__v": 0,
+  "available": "432902 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b051e1ec5a7ee43101d8b"
+  },
+  "image": "http://localhost:3000/uploads/image-1719338270315productRow2-3.webp",
+  "flag": "/imageJS/flaglove+.png",
+  "discount": "-33%",
+  "utilities": "/imageJS/inforPromotion6.png",
+  "title": "[M2 5 MÓN] COMBO BÁNH TRÁNG PHƠI SƯƠNG BƠ PHÔ MAI ÚT CƯNG M2 ĐẦY ĐỦ TOPPING 1 BÁNH TRÁNG 1 HỦ TỐP MỠ 1 HỦ RUỐC HÀNH PHI",
+  "voucher": "15% Giảm",
+  "price": "53.900",
+  "createdAt": {
+    "$date": "2024-06-25T17:57:50.318Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:57:50.318Z"
+  },
+  "__v": 0,
+  "available": "4320123 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b054a1ec5a7ee43101d8e"
+  },
+  "image": "http://localhost:3000/uploads/image-1719338314361productRow2-4.webp",
+  "flag": "/imageJS/flagmall-handleshoppe.png",
+  "discount": "",
+  "utilities": "/imageJS/inforPromotion4.png",
+  "title": "Bình acquy Lithium 100AH - 64 cell - 11.5kg",
+  "voucher": "",
+  "price": "3.650.000",
+  "createdAt": {
+    "$date": "2024-06-25T17:58:34.364Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:58:34.364Z"
+  },
+  "__v": 0,
+  "available": "984 sản phẩm có sẵn"
+},
+{
+  "_id": {
+    "$oid": "667b05741ec5a7ee43101d91"
+  },
+  "image": "http://localhost:3000/uploads/image-1719338356707productRow2-5.webp",
+  "discount": "-42%",
+  "utilities": "/imageJS/inforPromotion3.png",
+  "title": "Sổ lò xo basic A6 A5 B5 A4 160 trang kẻ caro kẻ ngang vở tập bullet journal note planner klong deli SỔ BÌA NHỰA",
+  "voucher": "",
+  "price": "10.500",
+  "createdAt": {
+    "$date": "2024-06-25T17:59:16.710Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-25T17:59:16.710Z"
+  },
+  "__v": 0,
+  "available": "20 sản phẩm có sẵn"
+}]
