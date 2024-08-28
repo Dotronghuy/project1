@@ -44,10 +44,9 @@ body {
 .flex-center {
     display: flex;
     align-items: center;
-
 }
 
 .flex-col {
+    display: flex;
     flex-direction: column;
-
 }

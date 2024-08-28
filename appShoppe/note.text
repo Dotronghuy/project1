@@ -41,9 +41,9 @@
 
 // xử lý logic cart
 - khi chưa đăng nhập thì cart trống ( ở icon cart home )
- - click icon cart home sẽ -> login -> home
+ - click icon cart home sẽ -> login -> home -> done
 - khi đăng nhập thì mỗi  1 user sẽ có cart khác nhau 
-- hiện thị cart ở cả home ( ở  icon cart )
+- hiện thị cart ở cả home ( ở  icon cart ) 
 - click và cart sẽ -> ui cart có products tương ứng với user thêm vào ( có thể trùng / khác nhau )
 - làm các chức năng ở cart tick vào sản phẩm thì + tiền tương ứng 
 - bấm mua sẽ render ra thông báo đã mua ( tạm thời chưa làm chức năng thanh toán )
@@ -52,7 +52,7 @@
 - về quanlity khi quanlity = 1 mà vẫn ấn trừ thì sẽ là xóa và hiện thông báo xác nhận xóa
  - quanlity =1 mà vẫn + thì sẽ lên tương ứng mối mỗi lần click và + tiền 
  - nếu nhập thì cũng tương tự
-- đăng xuất ở cart sẽ về login
+- đăng xuất ở cart sẽ về home -> done
 
 // Admin
 - có quyền xóa products bất ký và khi xóa sẽ xóa cả DB ở home / cart (user nếu có products ) 

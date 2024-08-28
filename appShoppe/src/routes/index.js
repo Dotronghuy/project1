@@ -4,10 +4,6 @@ const Products = require("../app/models/products");
 const user = require('./user');
 const cart = require('./cart');
 const router = express.Router();
-
-
-
-
 const showproduct = require("./showproducts");
 
 // render view products
@@ -96,6 +92,7 @@ router.get("/get-list-products", async function (req, res) {
 
 // render view cart
 router.use('/', cart)
+
 
 // render view home
 router.get("/", async function (req, res) {

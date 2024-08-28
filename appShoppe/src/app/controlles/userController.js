@@ -59,7 +59,8 @@ const login = async (req, res) => {
                 _id: user._id,
                 name: username,
             };
-
+            res.cookie('userKey', userKey, { path: '/', maxAge: 24 * 60 * 60 * 1000 });
+            console.log('Cookie đã được thiết lập:', userKey);
             const logEntry = `${new Date().toISOString()} - User ${username} logged in\n`;
             fs.appendFile(logFilePath, logEntry, (err) => {
                 if (err) {
@@ -77,6 +78,8 @@ const login = async (req, res) => {
 };
 
 const logout = (req, res) => {
+    res.clearCookie('userKey', { path: '/' });
+    console.log('Cookie đã được xóa');
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).send('Error destroying session');

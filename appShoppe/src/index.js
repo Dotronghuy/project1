@@ -118,6 +118,35 @@ const hbsHelper = {
             </div>
         `
     }
+  },
+  handleHeaderCart: (userKey) => {
+    if (!userKey) {
+      return `
+          <div class="default">
+                    <div class="default-shoppe_cart">
+                        <div class="container-cart">
+                            <a href="/login" class="cart" style="text-decoration: none;">
+                                <i class="fa-solid fa-cart-shopping icon-cart size-cart" style="color: #ffffff;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+               
+        `
+    } else {
+      return `
+            <div class="default">
+                    <div class="default-shoppe_cart">
+                        <div class="container-cart">
+                            <a href="/cart" class="cart" style="text-decoration: none;">
+                                <i class="fa-solid fa-cart-shopping icon-cart size-cart" style="color: #ffffff;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+               
+        `
+    }
   }
 }
 
