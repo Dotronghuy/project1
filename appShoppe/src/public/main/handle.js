@@ -37,3 +37,4 @@ if (Array.isArray(utilities) && utilities.length > 0) {
     utilities.style.backgroundImage = `url(${wrapperUtilities[utilitiesId]})`;
   });
 }
+

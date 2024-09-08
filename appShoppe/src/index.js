@@ -34,7 +34,7 @@ const hbsHelper = {
         <div class="userkey-popover_target--show arrow-up">
           <div class="desc-show-userkey default">
             <div class="show-handle">
-              <a href="/?logout=true" class="handle-exit">Đăng xuất</a>
+              <a href="/logout" class="handle-exit">Đăng xuất</a>
             </div>
           </div>
         </div>
@@ -127,6 +127,7 @@ const hbsHelper = {
                         <div class="container-cart">
                             <a href="/login" class="cart" style="text-decoration: none;">
                                 <i class="fa-solid fa-cart-shopping icon-cart size-cart" style="color: #ffffff;"></i>
+                                 <span class="cart-count" style="display: none;"></span>
                             </a>
                         </div>
                     </div>
@@ -140,8 +141,10 @@ const hbsHelper = {
                         <div class="container-cart">
                             <a href="/cart" class="cart" style="text-decoration: none;">
                                 <i class="fa-solid fa-cart-shopping icon-cart size-cart" style="color: #ffffff;"></i>
+                                <span class="cart-count" style="display: none;"></span>
                             </a>
                         </div>
+                        
                     </div>
                 </div>
                

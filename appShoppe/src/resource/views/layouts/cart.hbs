@@ -19,6 +19,101 @@
 <body>
     {{{body}}}
     <script src="/main/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function parsePrice(priceText) {
+                return parseFloat(priceText.replace(/[^0-9]/g, ''));
+            }
+
+            function updateTotalPrice(productId, quanlity) {
+                const priceElement = document.querySelector(`.price[data-id="${productId}"]`);
+                const totalPriceElement = document.querySelector(`.total-price[data-id="${productId}"]`);
+
+                if (priceElement && totalPriceElement) {
+                    const unitPrice = parsePrice(priceElement.textContent.trim());
+
+                    if (!isNaN(unitPrice)) {
+                        const totalPrice = unitPrice * quanlity;
+                        totalPriceElement.textContent = `₫${totalPrice.toLocaleString()}`;
+                    } else {
+                        console.error('Invalid unit price:', priceElement.textContent);
+                    }
+                } else {
+                    console.error('Price or Total Price element not found');
+                }
+            }
+
+            function updateQuanlity(productId, newQuanlity) {
+                const quanlityInput = document.querySelector(`.quanlity-number[data-id="${productId}"]`);
+                if (quanlityInput) {
+                    quanlityInput.value = newQuanlity;
+                    updateTotalPrice(productId, newQuanlity);
+                } else {
+                    console.error('Quantity input not found');
+                }
+            }
+
+            function initializeCart() {
+                const priceElements = document.querySelectorAll('.price');
+                priceElements.forEach(priceElement => {
+                    const productId = priceElement.getAttribute('data-id');
+                    const quanlityInput = document.querySelector(`.quanlity-number[data-id="${productId}"]`);
+                    if (quanlityInput) {
+                        const quanlity = parseInt(quanlityInput.value, 10);
+                        updateTotalPrice(productId, quanlity);
+                    }
+                });
+            }
+
+            initializeCart();
+
+            const minusButtons = document.querySelectorAll(".option-minus");
+            const addButtons = document.querySelectorAll(".option-add");
+
+            minusButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const productId = button.getAttribute("data-id");
+                    const quanlityInput = document.querySelector(`.quanlity-number[data-id="${productId}"]`);
+                    let quanlity = parseInt(quanlityInput.value, 10);
+
+                    if (quanlity > 1) {
+                        quanlity--;
+                        updateQuanlity(productId, quanlity);
+                    }
+                });
+            });
+
+            addButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const productId = button.getAttribute("data-id");
+                    const quanlityInput = document.querySelector(`.quanlity-number[data-id="${productId}"]`);
+                    let quanlity = parseInt(quanlityInput.value, 10);
+
+                    quanlity++;
+                    updateQuanlity(productId, quanlity);
+                });
+            });
+
+            const quanlityInputs = document.querySelectorAll(".quanlity-number");
+            quanlityInputs.forEach(input => {
+                input.addEventListener("input", function () {
+                    const productId = input.getAttribute("data-id");
+                    let quanlity = parseInt(input.value, 10);
+
+                    if (quanlity < 1 || isNaN(quanlity)) {
+                        quanlity = 1;
+                        input.value = quanlity;
+                    }
+
+                    updateQuanlity(productId, quanlity);
+                });
+            });
+        });
+
+
+
+    </script>
+
 
 </body>
 

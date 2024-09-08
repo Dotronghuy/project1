@@ -40,18 +40,19 @@
   + khi số lượng là 1 só cụ thể ( ví dụ 2 ) và bấm thêm or mua thì gửi lên DB cũng là số lượng đấy -> done
 
 // xử lý logic cart
-- khi chưa đăng nhập thì cart trống ( ở icon cart home )
- - click icon cart home sẽ -> login -> home -> done
-- khi đăng nhập thì mỗi  1 user sẽ có cart khác nhau 
-- hiện thị cart ở cả home ( ở  icon cart ) 
-- click và cart sẽ -> ui cart có products tương ứng với user thêm vào ( có thể trùng / khác nhau )
+- khi chưa đăng nhập thì cart trống ( ở icon cart home ) -> done
+   - click icon cart home sẽ -> login -> home -> done
+- khi đăng nhập thì mỗi  1 user sẽ có cart khác nhau ->done
+- hiện thị cart ở cả home ( ở  icon cart ) -> done
+- click và cart sẽ -> ui cart có products tương ứng với user thêm vào ( có thể trùng / khác nhau ) -> done
+
 - làm các chức năng ở cart tick vào sản phẩm thì + tiền tương ứng 
 - bấm mua sẽ render ra thông báo đã mua ( tạm thời chưa làm chức năng thanh toán )
 - bấm vào xóa sẽ xóa products ra khỏi DB cart của user đó ( không xóa products ở home )
 - bấm vào All thì sẽ tick all products và cộng tiền tương ứng 
-- về quanlity khi quanlity = 1 mà vẫn ấn trừ thì sẽ là xóa và hiện thông báo xác nhận xóa
- - quanlity =1 mà vẫn + thì sẽ lên tương ứng mối mỗi lần click và + tiền 
- - nếu nhập thì cũng tương tự
+- về quanlity khi quanlity = 1 mà vẫn ấn trừ thì sẽ là xóa và hiện thông báo xác nhận xóa , và xóa ra khỏi cart của user đó
+ - quanlity =1 mà vẫn + thì sẽ lên tương ứng mối mỗi lần click và + tiền  -> done
+ - nếu nhập thì cũng tương tự -> done
 - đăng xuất ở cart sẽ về home -> done
 
 // Admin

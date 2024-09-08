@@ -12,32 +12,36 @@ class cartController {
       const userId = req.session.user._id;
       const user = req.session.user;
       const username = user ? user.name : null;
-      const cart = await Cart.findOne({ userId: userId }).lean();
 
-      if (!cart) {
+      if (!user || !userId || !username) {
+        return res.redirect('/login');
+      }
+
+      const cart = await Cart.findOne({ idUsers: userId })
+        .populate('products.idProducts')
+        .lean();
+
+      if (!cart || cart.products.length === 0) {
         return res.render("me/cart", {
           layout: "cart",
           cart: { products: [] },
           userKey: username,
-          notificationMessage: "Giỏ hàng trống",
-          handle: ``
         })
       }
 
       res.render("me/cart", {
         layout: "cart",
-        cart: cart,
-        userKey: req.session.user,
-        notificationMessage: "",
-        handle: ``
+        carts: cart.products,
+        userKey: username,
       })
+
 
 
     } catch (e) {
       next(e);
     }
 
-  }
+  };
   // post /add-cart
   async add_cart(req, res, next) {
     try {
@@ -64,7 +68,42 @@ class cartController {
       console.error(e); // Log lỗi để dễ debug
       return res.redirect("back");
     }
-  }
+  };
+
+  // get /api/cart-modal
+  async getCartModal(req, res, next) {
+    try {
+      const userId = req.session.user._id;
+      const cart = await Cart.findOne({ idUsers: userId }).populate('products.idProducts').lean();
+
+      if (!cart) {
+        return res.json({ products: [] });
+      }
+      res.json(cart);
+    } catch (e) {
+      next(e);
+    }
+  };
+
+  // get count products
+  async countProducts(req, res, next) {
+    try {
+      const userId = req.session.user._id;
+      const cart = await Cart.findOne({ idUsers: userId }).lean();
+      if (!cart) {
+        return res.json({ count: 0 });
+      }
+
+      const productCount = cart.products.length;
+
+      res.json({ count: productCount });
+
+    } catch (error) {
+      console.error('Lỗi khi đếm số lượng sản phẩm: ', error);
+      res.status(500).json({ error: 'Có lỗi xảy ra khi đếm số lượng sản phẩm' });
+    }
+  };
+
 }
 
 module.exports = new cartController();

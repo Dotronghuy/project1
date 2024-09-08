@@ -6,7 +6,8 @@ const ensureAuthenticated = require('../middleware/ensureAuthenticated ');
 
 router.get('/cart', cartController.show);
 router.post('/add-cart/:id', ensureAuthenticated, cartController.add_cart);
-
+router.get('/api/cart-modal-data', ensureAuthenticated, cartController.getCartModal);
+router.get('/api/cart-item-count', cartController.countProducts);
 
 
 

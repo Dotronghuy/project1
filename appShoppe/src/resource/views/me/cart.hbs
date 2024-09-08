@@ -137,7 +137,7 @@
             <div class="option-products_cart">Thao tác</div>
         </div>
         <section class="products-cart default">
-            {{#each cart}}
+            {{#each carts}}
             <div class="wrrapper-products">
                 <div class="product-cart">
                     <div class="flex-center">
@@ -148,11 +148,12 @@
                         </div>
                         <div class="list-product-cart default">
                             <div class="item-prodcut-cart">
-                                <a href="">
-                                    <img src="{{this.image}}" alt="" class="image-cart">
+                                <a href="/products/{{this.idProducts.title}}">
+                                    <img src="{{this.idProducts.image}}" alt="" class="image-cart">
                                 </a>
                                 <div class="title-product-cart">
-                                    <a href="" class="title-product">{{this.title}}</a>
+                                    <a href="/products/{{this.idProducts.title}}"
+                                        class="title-product">{{this.idProducts.title}}</a>
 
                                     <div class="restore-cart flex-center">
                                         <div class="restore">Đổi ý miễn phí 15 ngày</div>
@@ -162,20 +163,22 @@
                         </div>
                         <div style="width: 14.24138%;"></div>
                         <div class="price-product">
-                            <span>{{this.price}}</span>
+                            <span class="price" data-id="{{this.idProducts._id}}"
+                                data-price="{{this.idProducts.price}}">₫{{this.idProducts.price}}</span>
                         </div>
                         <div class="quanlity-product">
                             <div style="margin-right: 15px;">
                                 <div class="shoppe-input_quanlity">
-                                    <button class="option option-minus">
+                                    <button class="option option-minus" data-id="{{this.idProducts._id}}">
                                         <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0"
                                             class="option-total">
                                             <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5">
                                             </polygon>
                                         </svg>
                                     </button>
-                                    <input type="text" value="1" class="quanlity-number flex-quanlity">
-                                    <button class="option option-add">
+                                    <input type="text" value="{{this.quanlity}}" class="quanlity-number flex-quanlity"
+                                        data-id="{{this.idProducts._id}}">
+                                    <button class="option option-add" data-id="{{this.idProducts._id}}">
                                         <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0"
                                             class="option-total">
                                             <polygon
@@ -187,8 +190,9 @@
                             </div>
                         </div>
                         <div class="total-price-product">
-                            <span>{{this.price}}</span>
-                            <span class="total-hidden">Total price: {{this.price}}</span>
+                            <span class="total-price"
+                                data-id="{{this.idProducts._id}}">₫{{this.idProducts.price}}</span>
+                            <span class="total-hidden">Total price: {{this.idProducts.price}}</span>
                         </div>
                         <div class="option-product-cart">
                             <button class="delete">Xóa</button>
