@@ -10,6 +10,7 @@ const productsDesc = new Schema(
     title: { type: String },
     voucher: { type: String },
     price: { type: String },
+    available: { type: Number },
   },
   { timestamps: true }
 );

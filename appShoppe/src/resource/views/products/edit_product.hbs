@@ -1,0 +1,56 @@
+<form action="/admin/update-product/{{product._id}}" method="POST" enctype="multipart/form-data" class="product-form"
+    id="productForm">
+    <div class="form-left">
+        <h1 style="margin-bottom: 6px;">Chỉnh Sửa Sản Phẩm</h1>
+
+        <label for="image" class="form-label">Image:</label>
+        <input type="file" name="image" id="image" required class="form-input">
+        <img id="imagePreview" src="{{product.image}}" alt="{{product.image}}" class="image-sever">
+
+        <label for="flag" class="form-label">Flag:</label>
+        <input type="file" name="flag" id="flag" class="form-input">
+        <img id="flagPreview" src="{{product.flag}}" alt="{{product.flag}}" class="image-sever">
+
+        <label for="utilities" class="form-label">Utilities:</label>
+        <input type="file" name="utilities" id="utilities" required class="form-input">
+        <img id="utilitiesPreview" src="{{product.utilities}}" alt="{{product.utilities}}" class="image-sever">
+
+        <label for="discount" class="form-label">Discount:</label>
+        <input type="text" name="discount" id="discount" class="form-input" value="{{product.discount}}">
+
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" name="title" id="title" required class="form-input" value="{{product.title}}">
+
+        <label for="voucher" class="form-label">Voucher:</label>
+        <input type="text" name="voucher" id="voucher" class="form-input">
+
+        <label for="price" class="form-label">Price:</label>
+        <input type="text" name="price" id="price" required class="form-input" value="{{product.price}}">
+
+        <label for="available" class="form-label">Quantity:</label>
+        <input type="number" name="available" id="available" required placeholder="{{product.available}}"
+            class="form-input" value="{{product.available}}">
+
+        <button type="submit" class="form-button">
+            <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-width="2" stroke="#fffffff"
+                    d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
+                    stroke-linejoin="round" stroke-linecap="round"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#fffffff"
+                    d="M17 15V18M17 21V18M17 18H14M17 18H20"></path>
+            </svg>
+            Update Product
+        </button>
+    </div>
+
+    <div class="form-right">
+        <p>Preview Image:</p>
+        <img id="preview" src="{{product.image}}" alt="Preview Image" class="image-preview">
+
+        {{!-- <img id="flagPreviewForm" src="{{product.flag}}" alt="Flag Preview" class="image-preview">
+
+        <img id="utilitiesPreviewForm" src="{{product.utilities}}" alt="Utilities Preview" class="image-preview"> --}}
+
+    </div>
+</form>

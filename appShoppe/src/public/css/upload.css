@@ -1,0 +1,141 @@
+.product-form {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 140px auto 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.form-left {
+    width: 60%;
+}
+
+.form-right {
+    width: 35%;
+    text-align: center;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    border-color: #66afe9;
+    outline: none;
+}
+
+.form-button {
+    border: none;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    background-color: #488aec;
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    user-select: none;
+    gap: 0.75rem;
+    box-shadow:
+        0 4px 6px -1px #488aec31,
+        0 2px 4px -1px #488aec17;
+    transition: all 0.6s ease;
+}
+
+.form-button:hover {
+    box-shadow:
+        0 10px 15px -3px #488aec4f,
+        0 4px 6px -2px #488aec17;
+}
+
+.form-button:focus,
+.form-button:active {
+    opacity: 0.85;
+    box-shadow: none;
+}
+
+.form-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.image-preview {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.image-sever {
+    margin-top: 6px;
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+}
+
+.image-display-section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.preview-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.flag-utilities-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flag-image {
+    width: 52px;
+    /* Điều chỉnh kích thước nếu cần */
+    height: 18px;
+    /* Điều chỉnh kích thước nếu cần */
+}
+
+.utility-image {
+    width: 100px;
+    /* Điều chỉnh kích thước nếu cần */
+    height: auto;
+    /* Giữ tỷ lệ cho hình ảnh */
+}
+
+.discount-label-preview {
+    position: relative;
+    margin-top: 10px;
+}
+
+.discount-label-preview>span {
+    background-color: #ffe97a;
+    padding: 4px 8px;
+    color: #ec3814;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 2px;
+}

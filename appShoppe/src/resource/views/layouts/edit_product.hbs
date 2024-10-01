@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/sytleHeader.css">
+    <link rel="stylesheet" href="/css/communityCode.css">
+    <link rel="stylesheet" href="/css/upload.css">
+
+</head>
+
+<body>
+
+    {{> header}}
+
+    {{{body}}}
+
+    <script src="/main/handle.js"></script>
+    <script>
+        document.getElementById('price').addEventListener('input', function (event) {
+            let value = event.target.value;
+            // Xóa bỏ tất cả các ký tự không phải số
+            let numberValue = value.replace(/[^\d]/g, '');
+            // Định dạng lại phần nguyên với dấu phân cách hàng nghìn
+            let formattedValue = addThousandsSeparator(numberValue);
+            // Gán lại giá trị đã định dạng cho input
+            event.target.value = formattedValue;
+        });
+
+        function addThousandsSeparator(value) {
+            return value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+
+    </script>
+
+</body>
+
+</html>

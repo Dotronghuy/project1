@@ -8,15 +8,19 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-        password:{
+        password: {
             type: String,
             required: true,
+        },
+        isAdmin: {
+            type: Boolean,
+            default: false,
         }
     },
     {
-        timestamps:true,
+        timestamps: true,
     }
 );
 
 
-module.exports = mongoose.model('user',userSchema )
+module.exports = mongoose.model('user', userSchema)

@@ -127,7 +127,7 @@
         <div class="wrrapper-products-cart">
             <div class="input-radio_cart">
                 <label for="" class="input-radio">
-                    <input type="checkbox" class="input-checkboxs">
+                    <input type="checkbox" class="input-checkboxs" id="checkbox-all">
                 </label>
             </div>
             <div class="name-products_cart">Sản phẩm</div>
@@ -138,12 +138,14 @@
         </div>
         <section class="products-cart default">
             {{#each carts}}
+            {{#if this.idProducts}}
             <div class="wrrapper-products">
                 <div class="product-cart">
                     <div class="flex-center">
                         <div class="input-radio_cart">
                             <label for="" class="input-radio">
-                                <input type="checkbox" class="input-checkboxs">
+                                <input type="checkbox" class="input-checkboxs" name="nameIds[]"
+                                    value="{{this.idProducts._id}}">
                             </label>
                         </div>
                         <div class="list-product-cart default">
@@ -176,7 +178,8 @@
                                             </polygon>
                                         </svg>
                                     </button>
-                                    <input type="text" value="{{this.quanlity}}" class="quanlity-number flex-quanlity"
+                                    <input type="text" value="{{this.quanlity}}"
+                                        class="quanlity-number flex-quanlity input-number_quanlity"
                                         data-id="{{this.idProducts._id}}">
                                     <button class="option option-add" data-id="{{this.idProducts._id}}">
                                         <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0"
@@ -195,25 +198,29 @@
                             <span class="total-hidden">Total price: {{this.idProducts.price}}</span>
                         </div>
                         <div class="option-product-cart">
-                            <button class="delete">Xóa</button>
+                            <button class="delete" data-id="{{this.idProducts._id}}" data-toggle="modal"
+                                data-target="#delete-products-modal">Xóa</button>
                         </div>
                     </div>
                 </div>
             </div>
+            {{/if}}
             {{/each }}
         </section>
     </div>
 </div>
+
+
 <section class="total-products">
     <div class="container-total-products flex-center">
         <div class="input-radio_cart">
             <label for="" class="input-radio">
-                <input type="checkbox" class="input-checkboxs">
+                <input type="checkbox" class="input-checkboxs" id="check-sum-box">
             </label>
         </div>
-        <button class="check-sum_products clear-btn-style points">Chọn tất cả (7) </button>
-        <button class="delete-products clear-btn-style points">Xóa </button>
-        <div class="save-love_products clear-btn-style points">Lưu vào mục Đã thích</div>
+        <button class="check-sum_products clear-btn-style points">Chọn tất cả (0) </button>
+        <button class="delete-products clear-btn-style points" data-id="{{this.idProducts._id}}">Xóa </button>
+        {{!-- <div class="save-love_products clear-btn-style points">Lưu vào mục Đã thích</div> --}}
         <div class="flex-1"></div>
         <div class="total-price_products">
             <div class="total-price flex-center">

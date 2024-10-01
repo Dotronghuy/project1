@@ -52,9 +52,6 @@ class cartController {
       if (isNaN(quanlity) || quanlity <= 0) {
         return res.status(400).json({ message: "NaN" });
       }
-      console.log(userId);
-      console.log("productId: " + productId);
-      console.log(quanlity);
       const result = await CartService.addtoCart(userId, productId, quanlity);
       if (result.status === 200) {
         if (actionBuy === 'buy-now') {
@@ -65,7 +62,6 @@ class cartController {
         return res.status(400).json({ message: result.message });
       }
     } catch (e) {
-      console.error(e); // Log lỗi để dễ debug
       return res.redirect("back");
     }
   };
@@ -99,8 +95,27 @@ class cartController {
       res.json({ count: productCount });
 
     } catch (error) {
-      console.error('Lỗi khi đếm số lượng sản phẩm: ', error);
       res.status(500).json({ error: 'Có lỗi xảy ra khi đếm số lượng sản phẩm' });
+    }
+  };
+
+  async delete(req, res, next) {
+    const userId = req.session.user._id;
+    const productId = req.body.productId;
+    try {
+      const result = await Cart.updateOne(
+        { idUsers: userId },
+        { $pull: { products: { idProducts: productId } } }
+      );
+
+      if (result.nModified === 0) {
+        return res.status(404).json({ message: 'Không tìm thấy sản phẩm để xóa' });
+      }
+
+      res.status(200).json({ message: 'Xóa sản phẩm thành công' });
+    } catch (error) {
+      console.error('Lỗi khi xóa sản phẩm:', error);
+      res.status(500).json({ message: 'Xóa sản phẩm thất bại' });
     }
   };
 

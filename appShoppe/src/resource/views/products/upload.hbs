@@ -1,46 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{!-- <title>{{title}}</title> --}}
 </head>
+
 <body>
-    <form action="/add-product" method="POST" enctype="multipart/form-data">
-            <label for="image">Image:</label>
-            <input type="file" name="image" id="image" required>
-            <label for="flag">Flag:</label>
-            <input type="text" name="flag" id="flag" >
-            <label for="utilities">Utilities:</label>
-            <input type="text" name="utilities" id="utilities" required>
-            <label for="discount">Discount:</label>
-            <input type="text" name="discount" id="discount" >
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" required>
-            <label for="voucher">Voucher:</label>
-            <input type="text" name="voucher" id="voucher" >
-            <label for="price">Price:</label>
-            <input type="text" name="price" id="price" required>
-        <button type="submit">Upload</button>
+
+    <form action="/add-product" method="POST" enctype="multipart/form-data" class="product-form" id="productForm">
+        <div class="form-left">
+            <label for="image" class="form-label">Image:</label>
+            <input type="file" name="image" id="image" required class="form-input" onchange="previewImage(event)">
+
+            <label for="flag" class="form-label">Flag:</label>
+            <input type="file" name="flag" id="flag" class="form-input">
+
+            <label for="utilities" class="form-label">Utilities:</label>
+            <input type="file" name="utilities" id="utilities" required class="form-input">
+
+            <label for="discount" class="form-label">Discount:</label>
+            <input type="text" name="discount" id="discount" class="form-input">
+
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" name="title" id="title" required class="form-input">
+
+            <label for="voucher" class="form-label">Voucher:</label>
+            <input type="text" name="voucher" id="voucher" class="form-input">
+
+            <label for="price" class="form-label">Price:</label>
+            <input type="text" name="price" id="price" required class="form-input">
+
+            <label for="available" class="form-label">Quantity:</label>
+            <input type="number" name="available" id="available" required placeholder="Số lượng có sẵn"
+                class="form-input">
+
+            <button type="submit" class="form-button">
+                <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-width="2" stroke="#fffffff"
+                        d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
+                        stroke-linejoin="round" stroke-linecap="round"></path>
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#fffffff"
+                        d="M17 15V18M17 21V18M17 18H14M17 18H20"></path>
+                </svg>
+                Upload Product
+            </button>
+
+        </div>
+
+        <div class="form-right">
+            <p>Preview Image:</p>
+            <img id="preview" src="" alt="Preview Image" class="image-preview">
+        </div>
     </form>
-<script src="/main/handle.js"></script>
-<script>
-   document.getElementById('price').addEventListener('input', function(event) {
-    let value = event.target.value;
-    // Xóa bỏ tất cả các ký tự không phải số
-    let numberValue = value.replace(/[^\d]/g, '');
-    // Định dạng lại phần nguyên với dấu phân cách hàng nghìn
-    let formattedValue = addThousandsSeparator(numberValue);
-    // Gán lại giá trị đã định dạng cho input
-    event.target.value = formattedValue;
-});
-
-function addThousandsSeparator(value) {
-    return value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}
 
 
-</script>
+    <script src="/main/handle.js"></script>
+    <script>
+        document.getElementById('price').addEventListener('input', function (event) {
+            let value = event.target.value;
+            // Xóa bỏ tất cả các ký tự không phải số
+            let numberValue = value.replace(/[^\d]/g, '');
+            // Định dạng lại phần nguyên với dấu phân cách hàng nghìn
+            let formattedValue = addThousandsSeparator(numberValue);
+            // Gán lại giá trị đã định dạng cho input
+            event.target.value = formattedValue;
+        });
+
+        function addThousandsSeparator(value) {
+            return value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+
+    </script>
 
 </body>
+
 </html>

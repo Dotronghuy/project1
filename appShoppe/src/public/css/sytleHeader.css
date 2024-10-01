@@ -191,7 +191,7 @@
 
 .desc-show-userkey {
     width: 152px;
-    height: 60px;
+    height: 70px;
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
@@ -203,11 +203,11 @@
     align-items: center;
     justify-content: center;
     height: 60px;
-    line-height: 60px;
 }
 
 .show-handle a {
     text-decoration: none;
+    padding-top: 5px;
 }
 
 .handle-exit {

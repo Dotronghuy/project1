@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (count > 0) {
                 cartCountElement.textContent = count;
+                cartCheckElement.textContent = count
                 cartCountElement.style.display = 'inline';
             } else {
                 cartCountElement.style.display = 'none';
@@ -137,5 +138,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cập nhật số lượng sản phẩm khi trang được tải
     updateCartCount();
-
 });

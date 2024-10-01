@@ -58,6 +58,7 @@ const login = async (req, res) => {
             req.session.user = {
                 _id: user._id,
                 name: username,
+                isAdmin: user.isAdmin,
             };
             res.cookie('userKey', userKey, { path: '/', maxAge: 24 * 60 * 60 * 1000 });
             const logEntry = `${new Date().toISOString()} - User ${username} logged in\n`;
@@ -66,8 +67,10 @@ const login = async (req, res) => {
                     console.error('Failed to log login:', err);
                 }
             });
-
-            res.redirect('/');
+            if (user.isAdmin) {
+                res.redirect('/admin');
+            } else
+                res.redirect('/');
         } else {
             res.status(400).send('Mật khẩu hoặc tên người dùng không đúng');
         }

@@ -12,6 +12,7 @@ const db = require("./app/config/db/index");
 const { default: mongoose } = require("mongoose");
 
 
+
 app.use("/static", express.static(path.join(__dirname, "node_modules")));
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -23,13 +24,27 @@ app.use(
 );
 
 const hbsHelper = {
+
   removeDomain: (email) => {
     return email.split('@')[0];
   },
   username: (userKey) => {
     if (typeof userKey === 'string' && userKey.trim() !== '') {
       const username = userKey.includes('@') ? userKey.split('@')[0] : userKey;
-      return `<span class="container-link desc-title show-move">
+      if (username === 'admin') {
+        return `<span class="container-link desc-title show-move">
+          ${username}
+          <div class="userkey-popover_target--show arrow-up">
+            <div class="desc-show-userkey default ">
+              <div class="show-handle flex-col">
+                <a href="/logout" class="handle-exit">Đăng xuất</a>
+                <a href="/admin" class="handle-exit">Quản lý</a>
+              </div>
+            </div>
+          </div>
+        </span>`;
+      } else {
+        return `<span class="container-link desc-title show-move">
         ${username}
         <div class="userkey-popover_target--show arrow-up">
           <div class="desc-show-userkey default">
@@ -39,6 +54,7 @@ const hbsHelper = {
           </div>
         </div>
       </span>`;
+      }
     } else {
       return `<a href="/register" class="sing-up container-link desc-title start">Đăng Ký</a>
         <div class="nav-wall"></div>
@@ -150,7 +166,8 @@ const hbsHelper = {
                
         `
     }
-  }
+  },
+
 }
 
 app.use(session({
@@ -179,6 +196,7 @@ app.engine(
     layoutsDir: path.join(__dirname, "resource", "views", "layouts"),
     partialsDir: path.join(__dirname, "resource", "views", "partials"),
     helpers: hbsHelper,
+
   })
 );
 

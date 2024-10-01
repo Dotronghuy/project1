@@ -5,6 +5,7 @@ const user = require('./user');
 const cart = require('./cart');
 const router = express.Router();
 const showproduct = require("./showproducts");
+const admin = require("./admin");
 
 // render view products
 router.use("/products", showproduct);
@@ -30,33 +31,41 @@ router.get("/register", function (req, res) {
 // logic upp load products
 
 router.get("/add_product", function (req, res) {
+  const user = req.session.user;
+  const username = user ? user.name : null;
   res.render("products/upload", {
     layout: "upload",
+    userKey: username,
   });
 });
 
-const flagImages = {
-  1: "/imageJS/flagmall-handleshoppe.png",
-  2: "/imageJS/flagmall.png",
-  3: "/imageJS/flaglove+.png",
-  4: "/imageJS/flaghandleshoppe.png",
-  5: "/imageJS/flaglove.png",
-};
-const utilitiesImage = {
-  1: "/imageJS/inforPromotion1.png",
-  2: "/imageJS/inforPromotion2.png",
-  3: "/imageJS/inforPromotion3.png",
-  4: "/imageJS/inforPromotion4.png",
-  5: "/imageJS/inforPromotion5.png",
-  6: "/imageJS/inforPromotion6.png",
-};
+// const flagImages = {
+//   1: "/imageJS/flagmall-handleshoppe.png",
+//   2: "/imageJS/flagmall.png",
+//   3: "/imageJS/flaglove+.png",
+//   4: "/imageJS/flaghandleshoppe.png",
+//   5: "/imageJS/flaglove.png",
+// };
+// const utilitiesImage = {
+//   1: "/imageJS/inforPromotion1.png",
+//   2: "/imageJS/inforPromotion2.png",
+//   3: "/imageJS/inforPromotion3.png",
+//   4: "/imageJS/inforPromotion4.png",
+//   5: "/imageJS/inforPromotion5.png",
+//   6: "/imageJS/inforPromotion6.png",
+// };
 
-router.post("/add-product", Uploads.single("image"), async (req, res) => {
+router.post("/add-product", Uploads.fields([
+  { name: 'image', maxCount: 1 },
+  { name: 'flag', maxCount: 1 },
+  { name: 'utilities', maxCount: 1 },
+
+]), async (req, res) => {
   const data = req.body;
-  const { file } = req;
-  const urlImage = `${req.protocol}://${req.get("host")}/uploads/${file.filename}`;
-  const flagImage = flagImages[data.flag];
-  const utilitiesImages = utilitiesImage[data.utilities];
+  const files = req.files;
+  const urlImage = `${req.protocol}://${req.get("host")}/uploads/${files.image[0].filename}`;
+  const flagImage = `${req.protocol}://${req.get("host")}/uploads/${files.flag[0].filename}`;
+  const utilitiesImages = `${req.protocol}://${req.get("host")}/uploads/${files.utilities[0].filename}`;
   const newProduct = new Products({
     image: urlImage,
     flag: flagImage,
@@ -65,14 +74,11 @@ router.post("/add-product", Uploads.single("image"), async (req, res) => {
     title: data.title,
     voucher: data.voucher,
     price: data.price,
+    available: data.available,
   });
   const result = await newProduct.save();
   if (result) {
-    res.json({
-      status: 200,
-      messenger: "Thêm thành công!",
-      data: result,
-    });
+    res.redirect('/admin');
   } else {
     res.json({
       status: 400,
@@ -91,8 +97,10 @@ router.get("/get-list-products", async function (req, res) {
 });
 
 // render view cart
-router.use('/', cart)
+router.use('/', cart);
 
+// render view adim
+router.use('/', admin);
 
 // render view home
 router.get("/", async function (req, res) {

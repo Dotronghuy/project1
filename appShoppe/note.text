@@ -34,7 +34,7 @@
 -- nhận được id người dùng và id sản phẩm -> done
 -- cartcontroller router cart cartServices -> done
 - khi đã đăng nhập click thêm vào giỏ hàng sẽ gửi data products lên DB và hiện ra thông báo đã thêm -> done
-- ----------------------- mua ngay sẽ gửi data products lên DB và chuyển hướng sang cart (có tích sẵn sản phẩm đã click) -> done 1/2
+- ----------------------- mua ngay sẽ gửi data products lên DB và chuyển hướng sang cart (có tích sẵn sản phẩm đã click) -> done 
 - xử lý thanh số lượng 
   + ở showproducts handle input số lượng + - -> done
   + khi số lượng là 1 só cụ thể ( ví dụ 2 ) và bấm thêm or mua thì gửi lên DB cũng là số lượng đấy -> done
@@ -46,23 +46,32 @@
 - hiện thị cart ở cả home ( ở  icon cart ) -> done
 - click và cart sẽ -> ui cart có products tương ứng với user thêm vào ( có thể trùng / khác nhau ) -> done
 
-- làm các chức năng ở cart tick vào sản phẩm thì + tiền tương ứng 
-- bấm mua sẽ render ra thông báo đã mua ( tạm thời chưa làm chức năng thanh toán )
-- bấm vào xóa sẽ xóa products ra khỏi DB cart của user đó ( không xóa products ở home )
-- bấm vào All thì sẽ tick all products và cộng tiền tương ứng 
-- về quanlity khi quanlity = 1 mà vẫn ấn trừ thì sẽ là xóa và hiện thông báo xác nhận xóa , và xóa ra khỏi cart của user đó
+- làm các chức năng ở cart tick vào sản phẩm thì + tiền tương ứng  -> done
+- bấm mua sẽ render ra thông báo đã mua ( tạm thời chưa làm chức năng thanh toán ) -> done
+- bấm vào xóa sẽ xóa products ra khỏi DB cart của user đó ( không xóa products ở home ) -> done
+- bấm vào All thì sẽ tick all products và cộng tiền tương ứng -> done
+- về quanlity khi quanlity = 1 mà vẫn ấn trừ thì sẽ là xóa và hiện thông báo xác nhận xóa , và xóa ra khỏi cart của user đó ( không xóa products ở home ) -> done
  - quanlity =1 mà vẫn + thì sẽ lên tương ứng mối mỗi lần click và + tiền  -> done
  - nếu nhập thì cũng tương tự -> done
 - đăng xuất ở cart sẽ về home -> done
 
 // Admin
-- có quyền xóa products bất ký và khi xóa sẽ xóa cả DB ở home / cart (user nếu có products ) 
-- có quyền xóa account user 
-- kiểm soát đơn hàng của user ( hiện thị hình ảnh tên sp tiền số lượng )
+- tạo view cho admin -> done
+  - 1 table user ( tên , mk , isAdmin , hành vi ) -> done
+  - 1 table  products ( tên, giá, ảnh, hành vì) -> done
+- có quyền xóa account user / cấp quyền cho user -> done
+- có quyền xóa products bất ký và khi xóa sẽ xóa cả DB ở home / cart (user nếu có products ) -> done
+- sửa và thêm mới products -> done
+
+  - 1 table cart( user) ( detail toàn bộ thông tin user mua ) -> chưa hoàn thiện
+- kiểm soát đơn hàng của user ( hiện thị hình ảnh tên sp tiền số lượng ) -> chưa hoàn thiện
 
 // handle Footer 
 - chỉnh sửa lại code không để code cứng -> js -> render lại code cho view
-
+// validator 
+- nếu nhập sai thì phải báo lỗi luôn ở trang đó 
+  - đăng ký : tk phải là gmail, mk tối thiểu 6 số ....
+  - login : nhập sai tk mk thì báo lỗi 
 
 // những thứ ở web này chưa có 
 - thông báo của shop 
@@ -72,6 +81,6 @@
 - thanh search
 - box chat mini
 - kênh người bán, đăng sẳn phẩm nếu user đăng ký thành người bán  
-- 
+- phân quyền giữa admin và người bán
 
  

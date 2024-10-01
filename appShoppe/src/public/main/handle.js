@@ -38,3 +38,53 @@ if (Array.isArray(utilities) && utilities.length > 0) {
   });
 }
 
+
+
+function previewImage(event) {
+  var reader = new FileReader();
+  reader.onload = function () {
+    var output = document.getElementById('preview');
+    output.src = reader.result;
+  };
+  reader.readAsDataURL(event.target.files[0]);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const oldImageSrc = "{{product.image}}";
+  const oldFlagSrc = "{{product.flag}}";
+  const oldUtilitiesSrc = "{{product.utilities}}";
+
+  function previewImage(input, previewId, oldSrc) {
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const preview = document.getElementById(previewId);
+      preview.src = e.target.result; // Cập nhật src của ảnh xem trước
+    };
+
+    if (file) {
+      reader.readAsDataURL(file); // Đọc hình ảnh
+    } else {
+      // Nếu không có tệp nào được chọn, giữ nguyên ảnh cũ
+      const preview = document.getElementById(previewId);
+      preview.src = oldSrc; // Giữ ảnh cũ
+    }
+  }
+
+  // Gán sự kiện cho input hình ảnh
+  document.getElementById("image").addEventListener("change", function () {
+    previewImage(this, "imagePreview", oldImageSrc);
+    previewImage(this, "preview", oldImageSrc); // Cập nhật cho thẻ preview
+  });
+
+  document.getElementById("flag").addEventListener("change", function () {
+    previewImage(this, "flagPreview", oldFlagSrc);
+  });
+
+  document.getElementById("utilities").addEventListener("change", function () {
+    previewImage(this, "utilitiesPreview", oldUtilitiesSrc);
+  });
+});
+
+
