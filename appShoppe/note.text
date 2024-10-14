@@ -67,9 +67,9 @@
 - kiểm soát đơn hàng của user ( hiện thị hình ảnh tên sp tiền số lượng ) -> chưa hoàn thiện
 
 // handle Footer 
-- chỉnh sửa lại code không để code cứng -> js -> render lại code cho view
+- chỉnh sửa lại code không để code cứng -> js -> render lại code cho view -> done
 // validator 
-- nếu nhập sai thì phải báo lỗi luôn ở trang đó 
+- nếu nhập sai thì phải báo lỗi luôn ở trang đó  -> done
   - đăng ký : tk phải là gmail, mk tối thiểu 6 số ....
   - login : nhập sai tk mk thì báo lỗi 
 
@@ -82,5 +82,7 @@
 - box chat mini
 - kênh người bán, đăng sẳn phẩm nếu user đăng ký thành người bán  
 - phân quyền giữa admin và người bán
+- liên kết với google, facebook để đăng nhập
+
 
  

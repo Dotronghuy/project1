@@ -17,21 +17,17 @@
 <body>
 
     {{{body}}}
-    {{!--
-    <script src="/main/main.js"></script> --}}
     <script src="React/validator.js"></script>
-
     <script>
         validator({
             form: '.wrrapper-input',
             errorSelector: '.form-message',
             rules: [
-                validator.isRequired('#phonenumber'),
+                validator.isRequired('#user'),
+                validator.isEmailValid('#user'),
+                validator.isPasswordValid('#password'),
             ],
         });
-
-
-
     </script>
 
 </body>

@@ -777,6 +777,47 @@ allMsg.addEventListener("click", () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const formElement = document.querySelector('#form-1');
+
+  formElement.addEventListener('submit', function (event) {
+    event.preventDefault(); // Ngăn chặn hành động mặc định của form
+
+    // Lấy dữ liệu từ form
+    const formData = new FormData(formElement);
+    const data = Object.fromEntries(formData.entries());
+
+    // Gửi yêu cầu đăng ký
+    fetch('/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data), // Chuyển đổi dữ liệu thành định dạng JSON
+    })
+      .then(response => {
+        if (response.ok) {
+          // Nếu đăng ký thành công, chuyển hướng đến trang login
+          window.location.href = '/login';
+        } else {
+          // Nếu có lỗi, hiển thị thông báo lỗi
+          return response.json().then(errorData => {
+            Object.keys(errorData).forEach(key => {
+              const errorElement = document.querySelector(`#${key}Error`);
+              if (errorElement) {
+                errorElement.innerText = errorData[key]; // Hiển thị lỗi
+                errorElement.classList.add('invalid'); // Thêm class cho lỗi
+              }
+            });
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+});
+
 
 
 

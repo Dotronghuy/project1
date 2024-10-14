@@ -39,10 +39,10 @@
                                     <div class="input-info_wrrapper-user info-account">
                                         <div class="info-inner flex-center">
                                             {{!-- <label for="userKey">User:</label> --}}
-                                            <input type="text" name="userKey" placeholder="Số điện thoại / Email"
-                                                class="form-label" id="phonenumber">
+                                            <input type="text" name="userKey" placeholder="Email" class="form-label"
+                                                id="phonenumber">
                                         </div>
-                                        <span class="form-message"></span>
+                                        <span id="userKeyError" class="form-message"></span>
                                     </div>
                                     <div class="input-info_wrrapper-user info-account">
                                         <div class="info-inner flex-center">
@@ -50,7 +50,7 @@
                                             <input type="password" name="password" placeholder="Mật khẩu"
                                                 class="form-label" id="password">
                                         </div>
-                                        <span class="form-message"></span>
+                                        <span id="passwordError" class="form-message"></span>
                                     </div>
 
                                     <button type="submit" class="submit flex-center size-submit">Đăng ký</button>
